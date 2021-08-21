@@ -20,5 +20,11 @@ h1 {
 p {
   color: white;
   font-family: verdana;
-  font-size: 20px;
+  font-size: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  color: green;
 }
