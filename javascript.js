@@ -9,4 +9,4 @@ function newQuote() {
   document.getElementById("quoteDisplay").innerHTML = quotes[randomNumber];
 }
 
-window.onload = newQuote; // Runs the function on click
+window.onload = newQuote; // Runs the function on page load
