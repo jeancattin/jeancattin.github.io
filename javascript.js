@@ -23,9 +23,8 @@ var quotes = [
   "Devant la taille de l'univers, on se sent abaissé par tant de grandeur.",
   "Dans un amas de nébuleuses, les shorts sont mauves.",
   "En radioastronomie, le son passe tellement vite qu'on risque de se briser la nuque.",
-  "La plupart des gens se laissent abuser par les mythes de la science."
-  
-  "Ce vaccin, quel sujet! Ne croy"
+  "La plupart des gens se laissent abuser par les mythes de la science.",
+  "Ce vaccin, quel sujet! Ne croyez pas ce que les médias vous disent."
 ]
 
 function newQuote() {
