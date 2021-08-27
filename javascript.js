@@ -24,7 +24,22 @@ var quotes = [
   "Dans un amas de nébuleuses, les shorts sont mauves.",
   "En radioastronomie, le son passe tellement vite qu'on risque de se briser la nuque.",
   "La plupart des gens se laissent abuser par les mythes de la science.",
-  "Ce vaccin, quel sujet! Ne croyez pas ce que les médias vous disent."
+  "Ce vaccin, quel sujet! Ne croyez pas ce que les médias vous disent.",
+  "Acculé dans l'antre du laboratoire, un physicien doit rester concentré.",
+  "Devant ton pulsar, entends-tu le glas qui vibre dans la tempête ?",
+  "Appliquer le chiffre pi à la lune peut provoquer la chute d'un pape.",
+  "Ces équations complexes sont tout de mon cru.",
+  "Le modèle standard est une vision ridicule détestée.",
+  "Dans les publications, attention au partage des faits !",
+  "Quand il y a trop de mouches devant le téléscope, il faut y mettre des boules anti-mites.",
+  "Le téléscope se pilote à l'aide d'une pâle d'un ampère-heure.",
+  "Les suisses sont vachement calés en théorie des cordes.",
+  "La théorie du tout? Aucun homme n'est jamais assez fort pour ce calcul.",
+  "Quand je reçois des reviews, j'ai la trouille d'un mauvais coup.",
+  "Content de son sort, l'astrophysicien retourne à ses pensées impénétrables.",
+  "Avant, les partisans du big crunch se battaient, voilà qu'ils se taisent maintenant.",
+  "Grâce à la théorie des champs, les mythes seront abolis.",
+  "Avec une telle pub, ce sera une belle thèse !"
 ]
 
 function newQuote() {
