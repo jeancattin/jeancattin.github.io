@@ -47,6 +47,7 @@ div.scroll {
   overflow-y: auto;
   text-align: justify;
   padding: 20px;
+  -webkit-overflow-scrolling: touch; 
 }
 
 
