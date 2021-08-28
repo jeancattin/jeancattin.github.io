@@ -31,7 +31,7 @@ var quotes = [
   "Ces équations complexes sont tout de mon cru.",
   "Le modèle standard est une vision ridicule détestée.",
   "Dans les publications, attention au partage des faits !",
-  "Quand il y a trop de mouches devant le téléscope, il faut y mettre des boules anti-mites.",
+  "Quand il y a trop de touristes autour du téléscope, il faut y mettre des boules anti-mites.",
   "Le téléscope se pilote à l'aide d'une pâle d'un ampère-heure.",
   "Les suisses sont vachement calés en théorie des cordes.",
   "La théorie du tout? Aucun homme n'est jamais assez fort pour ce calcul.",
@@ -39,7 +39,18 @@ var quotes = [
   "Content de son sort, l'astrophysicien retourne à ses pensées impénétrables.",
   "Avant, les partisans du big crunch se battaient, voilà qu'ils se taisent maintenant.",
   "Grâce à la théorie des champs, les mythes seront abolis.",
-  "Avec une telle pub, ce sera une belle thèse !"
+  "Avec une telle pub, ce sera une belle thèse !",
+  "J'ai observé un bond quantique décalé dans le nuage d'Oort.",
+  "À l'observatoire de Genève, tout le monde utilise le franglais.",
+  "La proximité d'un quasar assymétrique risque de combler ce trou noir.",
+  "La beauté d'un site dépend de son niveau vibratoire.",
+  "Les sons courts émis par Saggitarius Alpha sont difficiles à entendre.",
+  "L'aventure spatiale, c'est quérir des quêtes trop petites pour l'humanité.",
+  "Vous doutes sur l'unité Bovis sont imprécis.",
+  "Bob hésite à partager sa découverte. (Robert Oppenheimer, 1944)",
+  "À la TAUP 2021 World Conference, les mythos se clashent, mais je sais que tout n'est que vibration.",
+  "Pour la spectroscopie relativiste, les colonnes du téléscope doivent être branchées.",
+  "Ah ça, un trou de verre! C'est pourquoi la pendule ne sonnait l'heure que si tard.",
 ]
 
 function newQuote() {
