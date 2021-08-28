@@ -41,6 +41,14 @@ footer {
   bottom: 0;
 }
 
+div.scroll {
+  height: 50%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  padding: 20px;
+}
+
 
 
 
