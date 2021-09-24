@@ -24,12 +24,13 @@
  <!-- The sidebar -->
 <div class="sidebar">
   <a id="homebutton" class="active" onclick="showHome()">Home</a>
+  <a id="horoscopebutton" onclick="showHoroscope()">Horoscope</a>
   <a id="bibbutton" onclick="showBib()">Biographie</a>
   <a id="articlebutton" onclick="showArticle()">Article: La sagesse des étoiles</a>
 </div>
 
 
-<!-- Page content -->
+<!-- Page d'accueil -->
 <div id="home">
 <div>
   <h5 style="color:white; text-align: center; margin-top:10%; left: 20%; right: 20%">Sagesse cosmique du jour:</h5>
@@ -42,6 +43,17 @@
  </div>
 </div> 
 
+<!-- Horoscope -->
+<div id="horoscope" style="display:none; position:absolute; left:20%; right:20%"><article style = "margin-top:10%">
+<div>
+  <h5 style="color:white; text-align: center; margin-top:10%; left: 20%; right: 20%">Votre horoscope du jour:</h5>
+  <div id="quoteDisplay" style="color:Green; text-align: center;"></div>
+
+  <div style="color:Green; text-align: center;"> <em>Analyse astrologique par Dr. Martin Millon</em> </div> 
+
+ <script src="javascript.js"></script>
+ </div>
+</div>
 
 <div class="scroll" id="bib" style="display:none;position: absolute; left: 20%; right: 20%"><article style = "margin-top:10%">
   <h2>Biographie</h2>

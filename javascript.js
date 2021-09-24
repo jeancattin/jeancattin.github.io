@@ -65,6 +65,23 @@ function showHome(){
   document.getElementById("home").style.display = "block";
   document.getElementById("homebutton").classList.add('active');
   
+  document.getElementById("horoscope").style.display = "none";
+  document.getElementById("horoscopebutton").classList.remove('active');
+  
+  document.getElementById("bib").style.display = "none";
+  document.getElementById("bibbutton").classList.remove('active');
+  
+  document.getElementById("article").style.display = "none";
+  document.getElementById("articlebutton").classList.remove('active');
+}
+
+function showHoroscope(){
+  document.getElementById("home").style.display = "none";
+  document.getElementById("homebutton").classList.remove('active');
+  
+  document.getElementById("horoscope").style.display = "block";
+  document.getElementById("horoscopebutton").classList.add('active');
+  
   document.getElementById("bib").style.display = "none";
   document.getElementById("bibbutton").classList.remove('active');
   
@@ -76,6 +93,9 @@ function showBib(){
   document.getElementById("home").style.display = "none";
   document.getElementById("homebutton").classList.remove('active');
   
+  document.getElementById("horoscope").style.display = "none";
+  document.getElementById("horoscopebutton").classList.remove('active');
+  
   document.getElementById("bib").style.display = "block";
   document.getElementById("bibbutton").classList.add('active');
   
@@ -86,6 +106,9 @@ function showBib(){
 function showArticle(){
   document.getElementById("home").style.display = "none";
   document.getElementById("homebutton").classList.remove('active');
+  
+  document.getElementById("horoscope").style.display = "none";
+  document.getElementById("horoscopebutton").classList.remove('active');
   
   document.getElementById("bib").style.display = "none";
   document.getElementById("bibbutton").classList.remove('active');
