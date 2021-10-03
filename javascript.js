@@ -49,8 +49,7 @@ var quotes = [
   "Vous doutes sur l'unité Bovis sont imprécis.",
   "Bob hésite à partager sa découverte. (Robert Oppenheimer, 1944)",
   "À la TAUP 2021 World Conference, les mythos se clashent, mais je sais que tout n'est que vibration.",
-  "Pour la spectroscopie relativiste, les colonnes du téléscope doivent être branchées.",
-  "Ah ça, un trou de verre! C'est pourquoi la pendule ne sonnait l'heure que si tard.",
+  "Pour la spectroscopie relativiste, les colonnes du téléscope doivent être branchées."
 ]
 
 function newQuote() {
@@ -59,7 +58,6 @@ function newQuote() {
 }
 
 window.onload = newQuote; // Runs the function on page load
-
 
 function showHome(){
   document.getElementById("home").style.display = "block";

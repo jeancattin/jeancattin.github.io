@@ -36,8 +36,10 @@
   <h5 style="color:white; text-align: center; margin-top:10%; left: 20%; right: 20%">Sagesse cosmique du jour:</h5>
   <div id="quoteDisplay" style="color:Tomato; text-align: center;"></div>
 
-  <div style="color:Tomato; text-align: center;"> <em>
-    - Dr. Martin Millon </em> </div> 
+  <div style="color:Tomato; text-align: center;"> 
+  <em> - Dr. Martin Millon </em>
+  <button class="button buttonGo" id="btnContrepet" onclick="newQuote()">Plus de sagesse!</button>
+   </div> 
 
  <script src="javascript.js"></script>
  </div>
@@ -47,18 +49,26 @@
 <div id="horoscope" style="display:none; position:absolute; left:20%; right:20%"><article style = "margin-top:10%">
 <div>
   <h5 style="color:white; text-align: center; margin-top:10%; left: 20%; right: 20%">Votre horoscope du jour:</h5>
-  <div id="quoteDisplay" style="color:Green; text-align: center;"></div>
+  <div id="quoteHoroscope", style="color:Green; text-align: center;"></div>
 
-  <div style="color:Green; text-align: center;"> <em>Analyse astrologique par Dr. Martin Millon</em> </div> 
+<body>
+  <div id="typedtext" style="color:white"></div>
+</body>
+<em>Analyse astrologique par Dr. Martin Millon</em>
+</div>
+<div style="color:white; text-align: center; margin-top:3%; left: 20%; right: 20%">
+  <p style="color:gray; margin-top:0px; font-size:1.1.em;word-wrap:break-word">Tu n'est pas satisfait de ton avenir?
+  <button class="button buttonGo" id="btnHoroscope" onclick="makeHoroscope()">Demandes-en un nouveau à Martin!</button></p>
+</div>
 
- <script src="javascript.js"></script>
+ <script src="Horoscope.js"></script>
  </div>
 </div>
 
 <div class="scroll" id="bib" style="display:none;position: absolute; left: 20%; right: 20%"><article style = "margin-top:10%">
   <h2>Biographie</h2>
   <p>
-  Martin Millon commença sa découverte du monde scientifique de manière précoce, faisant l'expérience concrète des champs électrics en mettant les doigts dans la prise à l'âge de six ans. C'est depuis cette expérience enrichissante qu'il prit connaissance de sa compréhension de concepts autrement non tangibles pour les autres humains, tristement enfermés dans le monde matériel rationnel. Désirant perfectionner sa compréhension de l'univers et <em>aimant tellement les photons</em>, il entreprit de études en physique à l'EPFL. Ses études lui permirent de se familiariser avec les sciences traditionnelles qui, bien que fort limitées dans leur portée, lui donnèrent une excellente compréhension des domaines fascinants que sont la physique quantique et la cosmologie. Afin d'avoir accès à des équipements de pointe lui permettant de maximiser le couplage cosmique de ses chacras, il fit ensuite une thèse de doctorat en astrophysique car comme tout le monde le sait, <em>la thèse donne un sacré bonus.</em><br>
+  Martin Millon commença sa découverte du monde scientifique de manière précoce, faisant l'expérience concrète des champs électriques en mettant les doigts dans la prise à l'âge de six ans. C'est depuis cette expérience enrichissante qu'il prit connaissance de sa compréhension de concepts autrement non tangibles pour les autres humains, tristement enfermés dans le monde matériel rationnel. Désirant perfectionner sa compréhension de l'univers et <em>aimant tellement les photons</em>, il entreprit de études en physique à l'EPFL. Ses études lui permirent de se familiariser avec les sciences traditionnelles qui, bien que fort limitées dans leur portée, lui donnèrent une excellente compréhension des domaines fascinants que sont la physique quantique et la cosmologie. Afin d'avoir accès à des équipements de pointe lui permettant de maximiser le couplage cosmique de ses chacras, il fit ensuite une thèse de doctorat en astrophysique car comme tout le monde le sait, <em>la thèse donne un sacré bonus.</em><br>
 
 L'utilisation de téléscopes ultramodernes (c'est vrai, la science "mainstream" a quand même produit des accessoires utiles) lui permit d'affiner l'harmonisation de ses flux quantiques vitaux avec les modes de vibration du <em>fond diffus cosmologique accolé</em>. 
   </p>
@@ -72,6 +82,7 @@ L'utilisation de téléscopes ultramodernes (c'est vrai, la science "mainstream"
   </p>
   </article>
 </div>
+
 </body>
 
 
