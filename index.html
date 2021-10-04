@@ -47,12 +47,30 @@
 
 <!-- Horoscope -->
 <div id="horoscope" style="display:none; position:absolute; left:20%; right:20%"><article style = "margin-top:10%">
-  <h5 style="color:white; text-align: center; margin-top:10%; left: 20%; right: 20%">Votre horoscope du jour:</h5>
+
+  <div style="color:White; text-align: center;">
+      <h5 style="color:white; text-align: center; margin-top:10%; left: 20%; right: 20%">Mon signe astro: </h5>
+      <p>
+      <button class="button buttonGo" id="btnBelier" onclick="belier()">Bélier</button>
+      <button class="button buttonGo" id="btnTaureau" onclick="taureau()">Taureau</button>
+      <button class="button buttonGo" id="btnGemeau" onclick="gemeau()">Gémeau</button>
+      <button class="button buttonGo" id="btnCancer" onclick="cancer()">Cancer</button>
+      <button class="button buttonGo" id="btnLion" onclick="lion()">Lion</button>
+      <button class="button buttonGo" id="btnVierge" onclick="vierge()">Vierge</button>
+      <button class="button buttonGo" id="btnBalance" onclick="balance()">Balance</button>
+      <button class="button buttonGo" id="btnScorpion" onclick="scorpion()">Scorpion</button>
+      <button class="button buttonGo" id="btnSagittaire" onclick="sagittaire()">sagittaire</button>
+      <button class="button buttonGo" id="btnCapricorne" onclick="capricorne()">Capricorne</button>
+      <button class="button buttonGo" id="btnVerseau" onclick="verseau()">Verseau</button>
+      <button class="button buttonGo" id="btnPoisson" onclick="poisson()">Poisson</button>
+      </p>
+  </div>
   
-  <div id="quoteHoroscope", style="color:Green; text-align: justify;"></div>
+  <h5 style="color:white; text-align: center; margin-top:10%; left: 20%; right: 20%">Votre horoscope du jour!</h5>
+  <div id="quoteHoroscope", style="color:#5EFF00 ; text-align: justify;"></div>
   
   <div style="color:White; text-align: center;"> 
-  <em>- Analyse astrologique par Dr. Martin Millon</em>
+  <em><br>- Analyse astrologique par Dr. Martin Millon</em>
   </div>
   <div style="color:white; text-align: center; margin-top:3%; left: 20%; right: 20%">
   <p style="color:gray; margin-top:0px; font-size:1.1.em;word-wrap:break-word">Tu n'est pas satisfait de ton avenir?

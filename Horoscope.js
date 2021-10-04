@@ -13,48 +13,56 @@
         return z[y];
     }
 	
-	  var det0 = [" pourrait être  ", " est probablement ", " est ", " deviendra "];
-	  var nn1 = ["un moment ", "une période ", "un mois ", "un point "];
-    var adj1 = ["intriguant ", "spécial ", "unique ", "compliqué ", "peu ordinaire ", "intimidant ", "cruciale ", "confus "];
-    var nn1_2 = ["dans ta vie, ", "pour toi, ", "dans ton existance, ", "cette année, "];
-    var conj1 = ["en résultat ", "à cause ", "à la suite ", "en conséquence "];
-    var pl1 = ["d'une conjonction entre ", "d'un alignement entre ", "de la résonnance entre ", "d'une vibration entre "];
-    var pl2 = ["la lune ", "le Soleil ", "Mercure " , "Vénus ", "la Terre ", "Mars ", "Jupiter ", "Saturne ", "Uranus ", "Neptune ", "Pluton "];
-    var pl3 = ["avec ", "et ", "qui est parallèle à "];
-    var pl4 = [ "Andromède. ", "la nébuleuse de la Verge. ", "le nuage du sceptre. ", "l'oeil de l'ours. ", "Cérès. ","Les Alliés. ", "Pontarlier. "];
-    var pl5 = ["Ceci résulte en ", "Il en découle ", "Cela implique "];
-    var det1 = ["plusieurs ", "beaucoup ", "un soupçon ", "un certain nombre "];
-    var nn2 = ["d'événements ", "d'occurrences ", "d'incidents ", "d'incidents ", "de coincidences "];
-    var det1_2 = ["qui pourrait ", "qui va ", "pouvant potentiellement ", ];
-    var vb1 = ["te troubler ", "te déranger ", "te perturber ", "te boulverser ", "te déstabiliser ", "t'embèter ", "t'intimider "];
-    var det2 = ["d'abord, ", "initialement, ", "pour un moment, ", "quelques jours, ", "temporairement, ", "momentanément, "];
-    var vb2 = ["attendre ", "trouver ", "anticiper "];
-    var adj2 = ["beaucoup ", "un sentiment ", "suffisamment ", "significatif ", "au moins un peu ", "un besoin urgent "];
-    var nn3 = ["de soulagement ", "de confort ", " de support ", "d'affection ", "de bonheur "];
-    var det3 = ["plus tard. ", "bientôt. ", "à un certain moment ", "plus tard. ", "vers la fin du mois. ", "plus tôt que tu t'y attends. "];
-    var det4 = ["Néanmoins, ", "Cependant, ", "Par contre, ", "Ceci dit, ", "Mais encore, ", "Toutefois, ", "Malgré ça, ", "Après, "];
-    var vb2_2 = ["il faut ", "tu devrais ", "n'oublies pas de "];
-    var vb3 = ["garder à l'esprit ", "te souvenir ", "reconnaitre ", "admettre "];
-    var nn4 = [" ce changements ", "cette évolution ", " ces developpements ", "cette transition ", "ce remous ", "ce retournement ", "ce tournant ", "cette perturbation "];
-    var adj3 = ["rapide ", "inattendu ", "prompt ", "turbulent ", "instable ", "soudain "];
-    var vb4 = ["cause ", "provoque ", "crée ", "produit ", "te laisse vulnérable à ", "t'ouvre à ", "te rend susceptible à ", "t'amène ", "te cause ", "induit ", "précipite ", "engendre "];
-    var nn5 = ["des changements d'humeur. ", "de la confusion. ", "de la mauvaise humeur. ", "une agitation. ", "une nervosité. ", "un état alarmé. ", "une anxiété. ", "de l'inquiétude. ", "du stress. "];
-    var vb5 = ["amène ", "signifie ", "permet ", "facilite ", "est favorable à ", ("peut être  " + random(nn1) + "pour " ), "pourrait convenir à "];
-    var nn6 = ["des opportunités ", "des débuts ", "des entreprises ", "plusieurs projets ", "des options ", "des choix ", "des alternatives "];
-    var adj4 = ["nouveaux ", "frais ", "innovants ", "intriguants ", "prometteurs ", "inspirants "];
-    var det5 = ["en rapport avec ", "en ce qui concerne ", "concernant "];
-    var nn7 = ["le business ", "l'argent ", "les finances ", "la créativité ", "le travail ", "le marché du travail ", "ta vie professionnelle "];
-    var nn8 = ["l'amour. ", "une romance. ", "l'amitié. ", "la vie sociale. ", "ton réseau. ", "rencontrer des nouvelles personnes. "];
-    var det6 = ["Peut-être ", "Probablement ", "Certainement ", "Sans doutes ", "Possiblement"];
-    var vb6 = ["penser à ", "garder à l'esprit ", "considèrer ", "réfléchir à ", "essaier de te décider à "];
-    var nn9 = ["tes options. ", "tes choix. ", "tes alternatives. ", "ton plan d'action. ", "ton future. ", "ton avenir. ", "ton prochain objectif. "];
-    var vb7 = ["ne deviens pas ", "ne te sens pas ", "ne sois pas "];
-    var det7 = ["trop ", "excessivement ", "irrésonablement ", "excessivement "];
-    var adj5 = ["hésitant ", "confus ", "indécis ", "certain ", "sceptique ", "réluctant "];
+	  var a1 = [" pourrait être  ", " est probablement ", " est ", " deviendra "];
+	  var a2 = ["un moment ", "une période ", "un mois ", "un point "];
+    var a3 = ["intriguant ", "spécial ", "unique ", "compliqué ", "peu ordinaire ", "intimidant ", "cruciale ", "confus "];
+    var a4 = ["dans ta vie, ", "pour toi, ", "dans ton existance, ", "cette année, "];
+    var a5 = ["en résultat ", "à cause ", "à la suite ", "en conséquence "];
+    var a6 = ["d'une conjonction entre ", "d'un alignement entre ", "de la résonnance entre ", "d'une vibration entre ", "une analogie entre "];
+    var a7 = ["la lune ", "le Soleil ", "Mercure " , "Vénus ", "la Terre ", "Mars ", "Jupiter ", "Saturne ", "Uranus ", "Neptune ", "Pluton "];
+    var a8 = ["avec ", "et ", "qui est parallèle à "];
+    var a9 = [ "Andromède. ", "la nébuleuse de la Verge. ", "le nuage du sceptre. ", "l'oeil de l'ours. ", "Cérès. ","Les Alliés. ", "Pontarlier. "];
+    
+    var b1 = ["Ceci résulte en ", "Il en découle ", "Cela implique "];
+    var b2 = ["plusieurs ", "beaucoup ", "un soupçon ", "un certain nombre "];
+    var b3 = ["d'événements ", "d'occurrences ", "d'incidents ", "d'incidents ", "de coincidences "];
+    var b4 = ["qui pourrait ", "qui va ", "pouvant potentiellement ", ];
+    var b5 = ["te troubler ", "te déranger ", "te perturber ", "te boulverser ", "te déstabiliser ", "t'embèter ", "t'intimider "];
+    var b6 = ["d'abord, ", "initialement, ", "pour un moment, ", "quelques jours, ", "temporairement, ", "momentanément, "];
+    var b7 = ["attendre ", "trouver ", "anticiper "];
+    var b8 = ["beaucoup ", "un sentiment ", "suffisamment ", "une quantité significative ", "au moins un peu ", "un besoin urgent ", "une arrivée imprévue ", "un tout petit peu "];
+    var b9 = ["de soulagement ", "de confort ", " de support ", "d'affection ", "de bonheur "];
+    var b10 = ["plus tard. ", "bientôt. ", "à un certain moment ", "plus tard. ", "vers la fin du mois. ", "plus tôt que tu t'y attends. "];
+    
+    var c1 = ["Néanmoins, ", "Cependant, ", "Par contre, ", "Ceci dit, ", "Mais encore, ", "Toutefois, ", "Malgré ça, ", "Après, ", "Note que "];
+    var c2 = ["il faut ", "tu devrais ", "n'oublies pas de "];
+    var c3 = ["garder à l'esprit ", "te souvenir ", "reconnaitre ", "admettre "];
+    var c4 = [" ce changements ", "cette évolution ", " ces developpements ", "cette transition ", "ce remous ", "ce retournement ", "ce tournant ", "cette perturbation "];
+    var c5 = ["rapide ", "inattendu ", "prompt ", "turbulent ", "instable ", "soudain "];
+    var c6 = ["cause ", "provoque ", "crée ", "produit ", "te laisse vulnérable à ", "t'ouvre à ", "te rend susceptible à ", "t'amène ", "te cause ", "induit ", "précipite ", "engendre "];
+    var c7 = ["des changements d'humeur. ", "de la confusion. ", "de la mauvaise humeur. ", "une agitation. ", "une nervosité. ", "un état alarmé. ", "une anxiété. ", "de l'inquiétude. ", "du stress. "];
+    
+    var d1 = ["amène ", "signifie ", "permet ", "facilite ", "est favorable à ", "pourrait convenir à "];
+    var d2 = ["des opportunités ", "des débuts ", "des entreprises ", "plusieurs projets ", "des options ", "des choix ", "des alternatives "];
+    var d3 = ["nouveaux ", "frais ", "innovants ", "intriguants ", "prometteurs ", "inspirants "];
+    var d4 = ["en rapport avec ", "en ce qui concerne ", "concernant "];
+    var d5 = ["le business ", "l'argent ", "les finances ", "la créativité ", "le travail ", "le marché du travail ", "ta vie professionnelle "];
+    var d6 = ["l'amour. ", "une romance. ", "l'amitié. ", "la vie sociale. ", "ton réseau. ", "rencontrer des nouvelles personnes. "];
+    
+    var e1 = ["Peut-être ", "Probablement ", "Certainement ", "Sans doutes ", "Possiblement "];
+    var e2 = ["penser à ", "garder à l'esprit ", "considèrer ", "réfléchir à ", "essaier de te décider à "];
+    var e3 = ["tes options. ", "tes choix. ", "tes alternatives. ", "ton plan d'action. ", "ton future. ", "ton avenir. ", "ton prochain objectif. "];
+    var e4 = ["ne deviens pas ", "ne te sens pas ", "ne sois pas "];
+    var e5 = ["trop ", "excessivement ", "irrésonablement ", "excessivement "];
+    var e6 = ["hésitant ", "confus ", "indécis ", "certain ", "sceptique ", "réluctant "];
 
 	
 	function makeHoroscope() {
-			var finalvar = (month + random(det0) + random(nn1) + random(adj1) + random(nn1_2) + random(conj1) + random(pl1) + random(pl2) + random(pl3) + random(pl4) + random(pl5) + random(det1) + random(nn2) + random(det1_2) + random(vb1) + random(det2) + "néanmoins, tu peux " + random(vb2) + random(adj2) + random(nn3) + random(det3) + random(det4) + random(vb2_2) + random(vb3) + "que " + random(nn4) + random(adj3) + random(vb4) + random(nn5) + "\n\n" + random(det4) + month + " " + random(vb5) + "aussi " + random(nn6) + random(adj4) + random(det5) + random(nn7) + "ou " + random(nn8) + random(det6) + "vas-tu " + random(vb6) + random(nn9) + random(det4) + random(vb7) + random(det7) + random(adj5) + "à ce propos!");
+			var finalvar = (month + random(a1) + random(a2) + random(a3) + random(a4) + random(a5) + random(a6) + random(a7) + random(a8) + random(a9) + "<br><br/>" + 
+			random(b1) + random(b2) + random(b3) + random(b4) + random(b5) + random(b6) + "néanmoins, tu peux " + random(b7) + random(b8) + random(b9) + random(b10) + "<br><br/>" + 
+			random(c1) + random(c2) + random(c3) + "que " + random(c4) + random(c5) + random(c6) + random(c7) + "<br><br/>" + 
+			month + " ammène aussi " + random(d1) + "aussi " + random(d2) + random(d3) + random(d4) + random(d5) + "ou " + random(d6) + "<br><br/>" + 
+			random(e1) + "vas-tu " + random(e2) + random(e3) + "Donc " + random(e4) + random(e5) + random(e6) + "à ce propos!");
 			
 //			return(finalvar)
 			document.getElementById("quoteHoroscope").innerHTML = finalvar;
