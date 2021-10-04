@@ -18,7 +18,12 @@
     var adj1 = ["intriguant ", "spécial ", "unique ", "compliqué ", "peu ordinaire ", "intimidant ", "cruciale ", "confus "];
     var nn1_2 = ["dans ta vie, ", "pour toi, ", "dans ton existance, ", "cette année, "];
     var conj1 = ["en résultat ", "à cause ", "à la suite ", "en conséquence "];
-    var det1 = ["de plusieurs ", "de beaucoup ", "d'un soupçon ", "d'un certain nombre "];
+    var pl1 = ["d'une conjonction entre ", "d'un alignement entre ", "de la résonnance entre ", "d'une vibration entre "];
+    var pl2 = ["la lune ", "le Soleil ", "Mercure " , "Vénus ", "la Terre ", "Mars ", "Jupiter ", "Saturne ", "Uranus ", "Neptune ", "Pluton "];
+    var pl3 = ["avec ", "et ", "qui est parallèle à "];
+    var pl4 = [ "Andromède. ", "la nébuleuse de la Verge. ", "le nuage du sceptre. ", "l'oeil de l'ours. ", "Cérès. ","Les Alliés. ", "Pontarlier. "];
+    var pl5 = ["Ceci résulte en ", "Il en découle ", "Cela implique "];
+    var det1 = ["plusieurs ", "beaucoup ", "un soupçon ", "un certain nombre "];
     var nn2 = ["d'événements ", "d'occurrences ", "d'incidents ", "d'incidents ", "de coincidences "];
     var det1_2 = ["qui pourrait ", "qui va ", "pouvant potentiellement ", ];
     var vb1 = ["te troubler ", "te déranger ", "te perturber ", "te boulverser ", "te déstabiliser ", "t'embèter ", "t'intimider "];
@@ -49,7 +54,7 @@
 
 	
 	function makeHoroscope() {
-			var finalvar = (month + random(det0) + random(nn1) + random(adj1) + random(nn1_2) + random(conj1) + random(det1) + random(nn2) + random(det1_2) + random(vb1) + random(det2) + "néanmoins, tu peux " + random(vb2) + random(adj2) + random(nn3) + random(det3) + random(det4) + random(vb2_2) + random(vb3) + "que " + random(nn4) + random(adj3) + random(vb4) + random(nn5) + "\n\n" + random(det4) + month + " " + random(vb5) + "aussi " + random(nn6) + random(adj4) + random(det5) + random(nn7) + "ou " + random(nn8) + random(det6) + "vas-tu " + random(vb6) + random(nn9) + random(det4) + random(vb7) + random(det7) + random(adj5) + "à ce propos!");
+			var finalvar = (month + random(det0) + random(nn1) + random(adj1) + random(nn1_2) + random(conj1) + random(pl1) + random(pl2) + random(pl3) + random(pl4) + random(pl5) + random(det1) + random(nn2) + random(det1_2) + random(vb1) + random(det2) + "néanmoins, tu peux " + random(vb2) + random(adj2) + random(nn3) + random(det3) + random(det4) + random(vb2_2) + random(vb3) + "que " + random(nn4) + random(adj3) + random(vb4) + random(nn5) + "\n\n" + random(det4) + month + " " + random(vb5) + "aussi " + random(nn6) + random(adj4) + random(det5) + random(nn7) + "ou " + random(nn8) + random(det6) + "vas-tu " + random(vb6) + random(nn9) + random(det4) + random(vb7) + random(det7) + random(adj5) + "à ce propos!");
 			
 //			return(finalvar)
 			document.getElementById("quoteHoroscope").innerHTML = finalvar;
