@@ -54,6 +54,15 @@ img {
   padding: 10px;
 }
 
+img.Martin {
+  float:right; 
+  margin-right:2%; 
+  margin-top:2%; 
+  width:14%; 
+  height:auto; 
+  border:none;"
+}
+
 figcaption {
   color: yellow;
   font-style: italic;
@@ -73,6 +82,10 @@ div.scroll {
   -webkit-overflow-scrolling: touch; 
 }
 
+div.titlebar {
+  style="position:relative; 
+  text-align: center;"
+}
 
 
  /* The side navigation menu */
@@ -125,12 +138,11 @@ div.content {
   
   div.scroll {
   height: 60%;
-  left:0%; 
-  right:0%;
+  left:1px; 
+  right:10px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
-  padding: 2px;
   -webkit-overflow-scrolling: touch; 
 }
   
@@ -145,6 +157,20 @@ div.content {
   }
   a {
     font-size: 12px;
+  }
+  
+  img.Martin {
+  float:right; 
+  margin-right:2%; 
+  margin-top:0%; 
+  width:25%; 
+  height:auto; 
+  border:none;"
+  }
+  
+  div.titlebar {
+    style="position:relative; 
+    text-align: left;"
   }
 }
 
