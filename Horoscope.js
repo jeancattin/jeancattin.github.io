@@ -19,9 +19,11 @@
     var a4 = ["dans ta vie, ", "pour toi, ", "dans ton existance, ", "cette année, "];
     var a5 = ["en résultat ", "à cause ", "à la suite ", "en conséquence "];
     var a6 = ["d'une conjonction entre ", "d'un alignement entre ", "de la résonnance entre ", "d'une vibration entre ", "une analogie entre "];
-    var a7 = ["la lune ", "le Soleil ", "Mercure " , "Vénus ", "la Terre ", "Mars ", "Jupiter ", "Saturne ", "Uranus ", "Neptune ", "Pluton "];
+    var a7 = ["la lune ", "le Soleil ", "Mercure " , "Vénus ", "la Terre ", "Mars ", "Jupiter ", "Saturne ", "Uranus ", "Neptune ", "Pluton ", "Saggitarius alpha"];
     var a8 = ["avec ", "et ", "qui est parallèle à "];
-    var a9 = [ "Andromède. ", "la nébuleuse de la Verge. ", "le nuage du sceptre. ", "l'oeil de l'ours. ", "Cérès. ","Les Alliés. ", "Pontarlier. "];
+    var a9 = [ "Andromède", "la nébuleuse de la Verge", "le nuage du sceptre", "l'oeil de l'ours", "Cérès","Les Alliés", "Pontarlier", "le trou noir du milieu", "le mont de Vénus", "la constellation de l'Ithyphalle "];
+    var a10 = ["car les ", "puisque les ", "étant donné que les ", "vu que les "];
+    var a11 = ["sont sensibles à ", "ressentent l'influence de ", "ont leur karma aligné avec ", "ont une énergie similaire à ", "résonnent bien avec ", "ont une super relation avec "];
     
     var b1 = ["Ceci résulte en ", "Il en découle ", "Cela implique "];
     var b2 = ["plusieurs ", "beaucoup ", "un soupçon ", "un certain nombre "];
@@ -42,6 +44,10 @@
     var c6 = ["cause ", "provoque ", "crée ", "produit ", "te laisse vulnérable à ", "t'ouvre à ", "te rend susceptible à ", "t'amène ", "te cause ", "induit ", "précipite ", "engendre "];
     var c7 = ["des changements d'humeur. ", "de la confusion. ", "de la mauvaise humeur. ", "une agitation. ", "une nervosité. ", "un état alarmé. ", "une anxiété. ", "de l'inquiétude. ", "du stress. "];
     
+    var d01 = ["Puisque le ", "Comme le ", "Vu que le ", "Le ", "Un "];
+    var d02 = ["est connu pour avoir ", "a ", "est sujet à ", "peut avoir ", "a presque toujours ", "reçoit souvent ", "pourrait observer ", "n'a presque jamais "];
+    var d03 = ["un coup de pouce du destin, ", "des difficultés mineures, ", "un karma fluctuant, ", "une énergie troublée, ", "des problèmes d'érection, ", "des ennuis informatiques, ", "une petite douleure à l'oreille gauche, ", "une amitié problématique, "];
+    var d04 = ["cette période ", "ce mois ", "ces prochaines semaines ", "le futur proche "];
     var d1 = ["amène ", "signifie ", "permet ", "facilite ", "est favorable à ", "pourrait convenir à "];
     var d2 = ["des opportunités ", "des débuts ", "des entreprises ", "plusieurs projets ", "des options ", "des choix ", "des alternatives "];
     var d3 = ["nouveaux ", "frais ", "innovants ", "intriguants ", "prometteurs ", "inspirants "];
@@ -50,24 +56,37 @@
     var d6 = ["l'amour. ", "une romance. ", "l'amitié. ", "la vie sociale. ", "ton réseau. ", "rencontrer des nouvelles personnes. "];
     
     var e1 = ["Peut-être ", "Probablement ", "Certainement ", "Sans doutes ", "Possiblement "];
-    var e2 = ["penser à ", "garder à l'esprit ", "considèrer ", "réfléchir à ", "essaier de te décider à "];
-    var e3 = ["tes options. ", "tes choix. ", "tes alternatives. ", "ton plan d'action. ", "ton future. ", "ton avenir. ", "ton prochain objectif. "];
+    var e2 = ["penser à ", "considèrer ", "réfléchir à ", "essaier de te décider à "];
+    var e3 = ["ton plan d'action. ", "rééquilibrer ton karma.", "harmoniser tes énergies.", "lever les yeux au ciel.", "nettoyer ton téléscope.", "téléphoner à un ami."];
     var e4 = ["ne deviens pas ", "ne te sens pas ", "ne sois pas "];
     var e5 = ["trop ", "excessivement ", "irrésonablement ", "excessivement "];
-    var e6 = ["hésitant ", "confus ", "indécis ", "certain ", "sceptique ", "réluctant "];
+    var e6 = ["hésitant ", "confus ", "indécis ", "certain ", "sceptique ", "réluctant ", "motivé"];
 
 	
-	function makeHoroscope() {
-			var finalvar = (month + random(a1) + random(a2) + random(a3) + random(a4) + random(a5) + random(a6) + random(a7) + random(a8) + random(a9) + "<br><br/>" + 
-			random(b1) + random(b2) + random(b3) + random(b4) + random(b5) + random(b6) + "néanmoins, tu peux " + random(b7) + random(b8) + random(b9) + random(b10) + "<br><br/>" + 
+	function makeHoroscope(signe) {
+			var finalvar = (month + random(a1) + random(a2) + random(a3) + random(a4) + random(a5) + random(a6) + random(a7) + random(a8) + random(a9) + ", " + random(a10) + signe + " " + random(a11) + random(a9) + "." + 
+			random(b1) + random(b2) + random(b3) + random(b4) + random(b5) + random(b6) + "néanmoins, tu peux " + random(b7) + random(b8) + random(b9) + random(b10) + 
 			random(c1) + random(c2) + random(c3) + "que " + random(c4) + random(c5) + random(c6) + random(c7) + "<br><br/>" + 
-			month + " ammène aussi " + random(d1) + "aussi " + random(d2) + random(d3) + random(d4) + random(d5) + "ou " + random(d6) + "<br><br/>" + 
-			random(e1) + "vas-tu " + random(e2) + random(e3) + "Donc " + random(e4) + random(e5) + random(e6) + "à ce propos!");
+			random(d01) + signe + " en " + month + " " + random(d02) + random(d03) + random(d04) + random(d1) + random(d2) + random(d3) + random(d4) + random(d5) + "ou " + random(d6) + 
+			random(e1) + "devrais-tu " + random(e2) + random(e3) + " Mais " + random(e4) + random(e5) + random(e6) + "à ce propos!");
 			
 //			return(finalvar)
 			document.getElementById("quoteHoroscope").innerHTML = finalvar;
 }
-		
+
+
+function belier(){makeHoroscope(signe="bêlier")}
+function taureau(){makeHoroscope(signe="taureau")}
+function gemeau(){makeHoroscope(signe="gemeau")}
+function cancer(){makeHoroscope(signe="cancer")}
+function lion(){makeHoroscope(signe="lion")}
+function vierge(){makeHoroscope(signe="vierge")}
+function balance(){makeHoroscope(signe="balance")}
+function scorpion(){makeHoroscope(signe="scorpion")}
+function sagittaire(){makeHoroscope(signe="sagittaire")}
+function capricorne(){makeHoroscope(signe="capricorne")}
+function verseau(){makeHoroscope(signe="verseau")}
+function poisson(){makeHoroscope(signe="poisson")}
 		
 
 //window.onload = makeHoroscope; // Runs the function on page load
