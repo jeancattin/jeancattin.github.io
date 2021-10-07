@@ -12,15 +12,15 @@ html, body {
   z-index: -2;
 }
 
-h1 {
-  color: white;
-  text-align: center;
+h1.title {
+  color: yellow;
+  font-weight:bold;
 }
-h2 {
-  color: white;
-  text-align: center;
+h4.title {
+  color: yellow;
 }
-h4 {
+
+h1, h2, h3, h4, h5 {
   color: white;
   text-align: center;
 }
@@ -44,8 +44,14 @@ footer {
   bottom: 0px;
 }
 
-figure {
-  text-align: center;
+img {
+  float: center; 
+  height: 300px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 10px;
 }
 
 figcaption {
@@ -55,15 +61,17 @@ figcaption {
   text-align: center;
 }
 
+
 div.scroll {
   height: 75%;
+  left:15%; 
+  right:15%;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
-  padding: 20px;
+  padding: 10px;
   -webkit-overflow-scrolling: touch; 
 }
-
 
 
 
@@ -114,12 +122,29 @@ div.content {
   }
   .sidebar a {float: left;}
   div.content {margin-left: 0;}
+  
+  div.scroll {
+  height: 60%;
+  left:0%; 
+  right:0%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  padding: 2px;
+  -webkit-overflow-scrolling: touch; 
+}
+  
+  h1.title {
+  color: yellow;
+  font-weight:bold;
+  font-size: 20px;
+  }
+  h4.title {
+    color: yellow;
+    font-size: 12px;
+  }
+  a {
+    font-size: 12px;
+  }
 }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-} 
