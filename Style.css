@@ -5,7 +5,7 @@ html, body {
   width: 100%;
   position: absolute;
   background-color: black;
-  background-image: url('https://wallpapercave.com/wp/5KLTq1z.jpg');
+  background-image: url("Photos/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -25,6 +25,11 @@ h4 {
   text-align: center;
 }
 
+h7 {
+  color: white;
+  text-align: justify;
+}
+
 p {
   color: white;
   font-family: verdana;
@@ -35,13 +40,23 @@ footer {
   text-align: center;
   padding: 3px;
   width:100%;
-  color: green;
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 0px;
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption {
+  color: yellow;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
 }
 
 div.scroll {
-  height: 50%;
+  height: 75%;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;

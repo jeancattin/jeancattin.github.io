@@ -19,7 +19,7 @@
     var a4 = ["dans ta vie, ", "pour toi, ", "dans ton existance, ", "cette année, "];
     var a5 = ["en résultat ", "à cause ", "à la suite ", "en conséquence "];
     var a6 = ["d'une conjonction entre ", "d'un alignement entre ", "de la résonnance entre ", "d'une vibration entre ", "une analogie entre "];
-    var a7 = ["la lune ", "le Soleil ", "Mercure " , "Vénus ", "la Terre ", "Mars ", "Jupiter ", "Saturne ", "Uranus ", "Neptune ", "Pluton ", "Saggitarius alpha"];
+    var a7 = ["la lune ", "le Soleil ", "Mercure " , "Vénus ", "la Terre ", "Mars ", "Jupiter ", "Saturne ", "Uranus ", "Neptune ", "Pluton ", "Saggitarius alpha "];
     var a8 = ["avec ", "et ", "qui est parallèle à "];
     var a9 = [ "Andromède", "la nébuleuse de la Verge", "le nuage du sceptre", "l'oeil de l'ours", "Cérès","Les Alliés", "Pontarlier", "le trou noir du milieu", "le mont de Vénus", "la constellation de l'Ithyphalle "];
     var a10 = ["car les ", "puisque les ", "étant donné que les ", "vu que les "];
@@ -34,7 +34,7 @@
     var b7 = ["attendre ", "trouver ", "anticiper "];
     var b8 = ["beaucoup ", "un sentiment ", "suffisamment ", "une quantité significative ", "au moins un peu ", "un besoin urgent ", "une arrivée imprévue ", "un tout petit peu "];
     var b9 = ["de soulagement ", "de confort ", " de support ", "d'affection ", "de bonheur "];
-    var b10 = ["plus tard. ", "bientôt. ", "à un certain moment ", "plus tard. ", "vers la fin du mois. ", "plus tôt que tu t'y attends. "];
+    var b10 = ["plus tard. ", "bientôt. ", "à un certain moment ", "plus tard. ", "vers la fin du mois. ", "plus tôt que tu ne t'y attends. ", "dans pas longtemps. "];
     
     var c1 = ["Néanmoins, ", "Cependant, ", "Par contre, ", "Ceci dit, ", "Mais encore, ", "Toutefois, ", "Malgré ça, ", "Après, ", "Note que "];
     var c2 = ["il faut ", "tu devrais ", "n'oublies pas de "];
@@ -64,7 +64,7 @@
 
 	
 	function makeHoroscope(signe) {
-			var finalvar = (month + random(a1) + random(a2) + random(a3) + random(a4) + random(a5) + random(a6) + random(a7) + random(a8) + random(a9) + ", " + random(a10) + signe + " " + random(a11) + random(a9) + "." + 
+			var finalvar = (month + random(a1) + random(a2) + random(a3) + random(a4) + random(a5) + random(a6) + random(a7) + random(a8) + random(a9) + ", " + random(a10) + signe + " " + random(a11) + random(a9) + ". " + 
 			random(b1) + random(b2) + random(b3) + random(b4) + random(b5) + random(b6) + "néanmoins, tu peux " + random(b7) + random(b8) + random(b9) + random(b10) + 
 			random(c1) + random(c2) + random(c3) + "que " + random(c4) + random(c5) + random(c6) + random(c7) + "<br><br/>" + 
 			random(d01) + signe + " en " + month + " " + random(d02) + random(d03) + random(d04) + random(d1) + random(d2) + random(d3) + random(d4) + random(d5) + "ou " + random(d6) + 
