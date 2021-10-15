@@ -1,18 +1,3 @@
-/*
-head {
-  background: #f5b335;
-  height: 40px;
-  position: relative;
-  top: 0;
-  transition: top 0.2s ease-in-out;
-  width: 100%;
-}// we'll add this class using javascript
-.nav-up {
-  top: -40px; // same as header height. use variables in LESS/SASS
-}
-
-*/
-
 html, body {
   overflow-x: hidden;
   overflow-y: hidden; 
@@ -70,7 +55,6 @@ img {
 }
 
 img.Martin {
-  position: relative;
   float:right; 
   margin-right:2%; 
   margin-top:2%; 
@@ -86,32 +70,30 @@ figcaption {
   text-align: center;
 }
 
-div.titlebar {
-  position:relative;
-  float: left;
-  width: 82%; 
-}
 
 div.scroll {
   height: 75%;
-  width: 70%;
-  left:5%; 
+  left:15%; 
   right:15%;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
-  position: relative;
   padding: 10px;
   -webkit-overflow-scrolling: touch; 
 }
 
+div.titlebar {
+  style="position:relative; 
+  text-align: center;"
+}
+
 
  /* The side navigation menu */
-div.sidebar {
+.sidebar {
   margin: 0;
   padding: 0;
   width: 200px;
-  position: relative;
+  position: fixed;
   height: 30%;
   overflow: auto;
 }
@@ -146,7 +128,7 @@ div.content {
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
-  div.sidebar {
+  .sidebar {
     width: 100%;
     height: auto;
     position: relative;
