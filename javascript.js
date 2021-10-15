@@ -14,7 +14,7 @@ var quotes = [
   "À bout de course, les objets stellaires finissent par s'arrêter.",
   "À force de butter, les hommes verront leurs mythes disparaître.",
   "La connaissance de la métaphysique couvre les Suisses.",
-  "Pour observer le cosmos à la belle saison, les nuits paisibles posent problème.",
+  "Pour observer le cosmos à la belle saison qui passe, les nuits paisibles posent problème.",
   "Aux Alliés, le bois va jusqu'au Doubs.",
   "J'ai toujours aimé la médecine naturelle. Si vous saviez ce que votre plante me fait...",
   "Les preuves sont sous les voutes de l'univers.",
