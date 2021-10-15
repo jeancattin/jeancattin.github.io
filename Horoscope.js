@@ -42,18 +42,18 @@
     var c4 = [" ce changements ", "cette évolution ", " ces developpements ", "cette transition ", "ce remous ", "ce retournement ", "ce tournant ", "cette perturbation "];
     var c5 = ["rapide ", "inattendu ", "prompt ", "turbulent ", "instable ", "soudain "];
     var c6 = ["cause ", "provoque ", "crée ", "produit ", "te laisse vulnérable à ", "t'ouvre à ", "te rend susceptible à ", "t'amène ", "te cause ", "induit ", "précipite ", "engendre "];
-    var c7 = ["des changements d'humeur. ", "de la confusion. ", "de la mauvaise humeur. ", "une agitation. ", "une nervosité. ", "un état alarmé. ", "une anxiété. ", "de l'inquiétude. ", "du stress. "];
+    var c7 = ["des changements d'humeur. ", "de la confusion. ", "de la mauvaise humeur. ", "une agitation. ", "une nervosité. ", "un état alarmé. ", "une anxiété. ", "de l'inquiétude. ", "du stress. ", "des douleurs testiculaires. "];
     
     var d01 = ["Puisque le ", "Comme le ", "Vu que le ", "Le ", "Un "];
     var d02 = ["est connu pour avoir ", "a ", "est sujet à ", "peut avoir ", "a presque toujours ", "reçoit souvent ", "pourrait observer ", "n'a presque jamais "];
-    var d03 = ["un coup de pouce du destin, ", "des difficultés mineures, ", "un karma fluctuant, ", "une énergie troublée, ", "des problèmes d'érection, ", "des ennuis informatiques, ", "une petite douleure à l'oreille gauche, ", "une amitié problématique, "];
+    var d03 = ["un coup de pouce du destin, ", "des difficultés mineures, ", "un karma fluctuant, ", "une énergie troublée, ", "des problèmes d'érection, ", "des problèmes d'érection, ", "des ennuis informatiques, ", "une petite douleure à l'oreille gauche, ", "une amitié problématique, "];
     var d04 = ["cette période ", "ce mois ", "ces prochaines semaines ", "le futur proche "];
     var d1 = ["amène ", "signifie ", "permet ", "facilite ", "est favorable à ", "pourrait convenir à "];
     var d2 = ["des opportunités ", "des débuts ", "des entreprises ", "plusieurs projets ", "des options ", "des choix ", "des alternatives "];
     var d3 = ["nouveaux ", "frais ", "innovants ", "intriguants ", "prometteurs ", "inspirants "];
     var d4 = ["en rapport avec ", "en ce qui concerne ", "concernant "];
-    var d5 = ["le business ", "l'argent ", "les finances ", "la créativité ", "le travail ", "le marché du travail ", "ta vie professionnelle "];
-    var d6 = ["l'amour. ", "une romance. ", "l'amitié. ", "la vie sociale. ", "ton réseau. ", "rencontrer des nouvelles personnes. "];
+    var d5 = ["le business ", "le cours du bitcoin ", "ta prochaine 7B+ ", "tes beaux parents ", "le travail ", "tes collègues chiants ", "ta vie professionnelle "];
+    var d6 = ["l'amour. ", "un séance de grimpe. ", "l'amitié. ", "le prochain scandale 20 minutes. ", "ton réseau . "];
     
     var e1 = ["Peut-être ", "Probablement ", "Certainement ", "Sans doutes ", "Possiblement "];
     var e2 = ["penser à ", "considèrer ", "réfléchir à ", "essaier de te décider à "];
