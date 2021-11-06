@@ -115,3 +115,7 @@ function showArticle(){
   document.getElementById("articlebutton").classList.add('active');
 }
 
+function popup() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
