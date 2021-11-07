@@ -60,7 +60,7 @@ img.Martin {
   margin-top:2%; 
   width:14%; 
   height:auto; 
-  border:none;"
+  border:none;
 }
 
 img.btc {
@@ -131,8 +131,8 @@ div.content {
   height: 1000px;
 }
 
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 1000px) {
+/* On screens that are less than X pixel wide, make the sidebar into a topbar */
+@media screen and (max-width: 1200px) {
   .sidebar {
     width: 100%;
     height: auto;
@@ -161,10 +161,7 @@ div.content {
     font-size: 35px;
   }
   a {
-    font-size: 18px;
-  }
-  a {
-    font-size: 18px;
+    font-size: 20px;
   }
   h1, h2, h3, h4, h5 {
     color: white;
@@ -184,12 +181,16 @@ div.content {
   margin-top:0%; 
   width:25%; 
   height:auto; 
-  border:none;"
+  border:none;
   }
   
   img.btc {
-  width:40%; 
+  float:right; 
+  margin-right:2%; 
+  margin-bottom:0%; 
+  width:20%; 
   height:auto; 
+  border:none;
   }
   
   div.titlebar {
