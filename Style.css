@@ -7,17 +7,17 @@
 }
 
 html, body {
-  overflow-x: hidden;
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 100%;
   background-color: black;
   background-image: url("Photos/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 h1.title {
@@ -44,62 +44,61 @@ h6 {
   text-align: justify;
   font-size: clamp(13px, 2.5vw, 15px);
   font-weight: normal;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 p {
   color: white;
   font-family: verdana;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 a {
   font-size: clamp(14px, 2.5vw, 16px);
-}
-
-/* =============================================
-   BUTTONS
-   ============================================= */
-
-.button {
-  color: blue;
-  background-color: yellow;
-  padding: 6px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: clamp(13px, 2.5vw, 16px);
-  margin: 4px 2px;
   cursor: pointer;
-  border: none;
-  border-radius: 2px;
 }
 
 /* =============================================
-   HEADER / TITLEBAR
+   HEADER
    ============================================= */
+
+.site-header {
+  position: relative;
+  padding: 16px 160px 12px 16px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.45);
+}
 
 div.titlebar {
   text-align: center;
-  padding: 4px 10px;
+}
+
+img.Martin {
+  position: absolute;
+  top: 12px;
+  right: 2%;
+  width: 13%;
+  max-width: 130px;
+  height: auto;
+  border: none;
+  padding: 0;
 }
 
 /* =============================================
-   SIDEBAR (desktop: left column)
+   NAVIGATION (sidebar fixe sur desktop)
    ============================================= */
 
 .sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
   position: fixed;
   top: 0;
   left: 0;
+  width: 200px;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 100;
+  padding-top: 8px;
 }
 
 .sidebar a {
@@ -122,27 +121,44 @@ div.titlebar {
 }
 
 /* =============================================
-   MAIN CONTENT AREA
+   MAIN LAYOUT WRAPPER
    ============================================= */
 
-div.content {
+.page-wrapper {
   margin-left: 200px;
-  padding: 1px 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* =============================================
-   SCROLLABLE SECTIONS
+   SECTIONS DE CONTENU (scroll naturel de la page)
    ============================================= */
 
-div.scroll {
-  position: relative;
+.scroll {
+  width: 100%;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 16px;
-  max-width: 900px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  padding: 20px 24px 100px;
   text-align: justify;
-  -webkit-overflow-scrolling: touch;
+}
+
+/* =============================================
+   BOUTONS
+   ============================================= */
+
+.button {
+  color: blue;
+  background-color: yellow;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: clamp(13px, 2.5vw, 15px);
+  margin: 4px 2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
 }
 
 /* =============================================
@@ -153,25 +169,16 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 10px;
-}
-
-img.Martin {
-  float: right;
-  margin-right: 2%;
-  margin-top: 2%;
-  width: 14%;
-  height: auto;
-  border: none;
-  max-width: 140px;
 }
 
 img.btc {
   height: 60px;
   width: auto;
   padding: 5px;
+  display: inline;
+  margin: 0;
 }
 
 figcaption {
@@ -188,23 +195,25 @@ figcaption {
 
 footer {
   text-align: center;
-  padding: 6px;
+  padding: 10px;
   width: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: auto;
 }
 
 footer p {
   margin: 2px 0;
+  font-size: 13px;
 }
 
 /* =============================================
-   POPUP (Bitcoin)
+   POPUP BITCOIN
    ============================================= */
 
 .popup {
   position: fixed;
-  bottom: 8px;
-  right: 8px;
+  bottom: 10px;
+  right: 10px;
   display: inline-block;
   cursor: pointer;
   z-index: 200;
@@ -231,7 +240,6 @@ footer p {
   position: absolute;
   top: 100%;
   right: 12px;
-  margin-left: -5px;
   border-width: 5px;
   border-style: solid;
   border-color: yellow transparent transparent transparent;
@@ -247,7 +255,6 @@ footer p {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -260,15 +267,14 @@ footer p {
 
 @media screen and (max-width: 900px) {
 
-  /* Sidebar devient une topbar */
   .sidebar {
+    position: relative;
     width: 100%;
     height: auto;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgba(0,0,0,0.75);
+    padding-top: 0;
   }
 
   .sidebar a {
@@ -279,16 +285,16 @@ footer p {
     min-width: 80px;
   }
 
-  div.content {
+  .page-wrapper {
     margin-left: 0;
   }
 
-  div.scroll {
-    padding: 12px;
+  .site-header {
+    padding: 12px 130px 10px 12px;
   }
 
   img.Martin {
-    width: 22%;
+    width: 20%;
     max-width: 110px;
   }
 }
@@ -300,96 +306,54 @@ footer p {
 
 @media screen and (max-width: 600px) {
 
-  /* Header: portrait compact */
+  .site-header {
+    padding: 12px 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   img.Martin {
-    float: none;
-    display: block;
-    margin: 8px auto 0;
-    width: 40%;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 38%;
     max-width: 120px;
-  }
-
-  div.titlebar {
-    text-align: center;
-    padding: 6px 10px 4px;
-  }
-
-  /* Sidebar: topbar avec liens en colonne 2×2 */
-  .sidebar {
-    flex-wrap: wrap;
+    margin-bottom: 8px;
   }
 
   .sidebar a {
-    flex: 1 1 45%;
+    flex: 1 1 48%;
     font-size: 13px;
     padding: 10px 4px;
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
-  /* Sections scrollables : plein écran */
-  div.scroll {
-    padding: 10px 12px 80px; /* padding-bottom pour éviter overlap footer */
-    max-width: 100%;
+  .scroll {
+    padding: 14px 14px 80px;
   }
 
-  /* Textes */
-  h6 {
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  p {
-    font-size: 13px;
-  }
-
-  /* Images: pleine largeur sur mobile */
-  img {
-    max-width: 92%;
-    height: auto;
-    padding: 6px;
-  }
-
-  img.btc {
-    height: 50px;
-  }
-
-  /* Boutons horoscope: grille */
   #horoscope p {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     justify-content: center;
+    margin: 0;
+    padding: 0;
   }
 
   .button {
     flex: 1 1 calc(33% - 6px);
     min-width: 80px;
-    max-width: 120px;
+    max-width: 130px;
     font-size: 13px;
     padding: 8px 4px;
     text-align: center;
   }
 
-  /* Footer */
-  footer {
-    padding: 8px 12px;
-    position: relative;
-  }
-
-  footer p {
-    font-size: 12px;
-  }
-
-  /* Popup bitcoin: ancré en bas à droite, taille réduite */
-  .popup {
-    bottom: 6px;
-    right: 6px;
-  }
-
   .popup .popuptext {
     width: min(240px, 85vw);
     font-size: 11px;
-    right: 0;
   }
 }

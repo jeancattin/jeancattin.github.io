@@ -10,18 +10,7 @@
 
 <body>
 
-  <!-- Header: photo + titre -->
-  <div style="position:relative; overflow:hidden;">
-    <img class="Martin" src="Photos/Martin_home.png"
-      alt="Martin l'astrologue"
-      title="Martin l'astrologue" />
-    <div class="titlebar">
-      <h1 class="title">Le <em>Cosmos</em> vous parle</h1>
-      <h4 class="title">Blog astrologique de Dr. Martin Millon</h4>
-    </div>
-  </div>
-
-  <!-- Sidebar / topbar navigation -->
+  <!-- Sidebar / topbar navigation (fixe sur desktop, topbar sur mobile) -->
   <div class="sidebar">
     <a id="homebutton" class="active" onclick="showHome()">Home</a>
     <a id="horoscopebutton" onclick="showHoroscope()">Horoscope</a>
@@ -29,130 +18,146 @@
     <a id="articlebutton" onclick="showArticle()">Article: La sagesse des étoiles</a>
   </div>
 
-  <!-- Page d'accueil -->
-  <div id="home" class="scroll">
-    <h5>Sagesse cosmique du jour:</h5>
-    <div id="quoteDisplay" style="color:Tomato; text-align:center;"></div>
-    <div style="color:Tomato; text-align:center;">
-      <em> - <br> Dr. Martin Millon </br> </em>
-      <button class="button buttonGo" id="btnContrepet" onclick="newQuote()">Plus de sagesse!</button>
+  <!-- Wrapper principal (décalé de 200px à gauche sur desktop) -->
+  <div class="page-wrapper">
+
+    <!-- Header avec photo + titre -->
+    <div class="site-header">
+      <img class="Martin" src="Photos/Martin_home.png"
+        alt="Martin l'astrologue"
+        title="Martin l'astrologue" />
+      <div class="titlebar">
+        <h1 class="title">Le <em>Cosmos</em> vous parle</h1>
+        <h4 class="title">Blog astrologique de Dr. Martin Millon</h4>
+      </div>
     </div>
-    <script src="javascript.js"></script>
-  </div>
 
-  <!-- Horoscope -->
-  <div id="horoscope" class="scroll" style="display:none;">
-    <div style="color:White; text-align:center;">
-      <h5 style="color:white; text-align:center;">Mon signe astro:</h5>
-      <p>
-        <button class="button" onclick="belier()">Bélier</button>
-        <button class="button" onclick="taureau()">Taureau</button>
-        <button class="button" onclick="gemeau()">Gémeau</button>
-        <button class="button" onclick="cancer()">Cancer</button>
-        <button class="button" onclick="lion()">Lion</button>
-        <button class="button" onclick="vierge()">Vierge</button>
-        <button class="button" onclick="balance()">Balance</button>
-        <button class="button" onclick="scorpion()">Scorpion</button>
-        <button class="button" onclick="sagittaire()">Sagittaire</button>
-        <button class="button" onclick="capricorne()">Capricorne</button>
-        <button class="button" onclick="verseau()">Verseau</button>
-        <button class="button" onclick="poisson()">Poisson</button>
-      </p>
+    <!-- Page d'accueil -->
+    <div id="home" class="scroll">
+      <h5>Sagesse cosmique du jour:</h5>
+      <div id="quoteDisplay" style="color:Tomato; text-align:center;"></div>
+      <div style="color:Tomato; text-align:center; margin-top:10px;">
+        <em>- <br> Dr. Martin Millon </br></em>
+        <button class="button" onclick="newQuote()">Plus de sagesse!</button>
+      </div>
+      <script src="javascript.js"></script>
     </div>
-    <h5 style="color:white; text-align:center; margin-top:20px;">Votre horoscope du jour!</h5>
-    <div id="quoteHoroscope" style="color:#5EFF00; text-align:justify;"></div>
-    <div style="color:White; margin-top:16px; text-align:center;">
-      <em>- Analyse astrologique par Dr. Martin Millon</em>
+
+    <!-- Horoscope -->
+    <div id="horoscope" class="scroll" style="display:none;">
+      <div style="color:White; text-align:center;">
+        <h5 style="color:white; text-align:center;">Mon signe astro:</h5>
+        <p>
+          <button class="button" onclick="belier()">Bélier</button>
+          <button class="button" onclick="taureau()">Taureau</button>
+          <button class="button" onclick="gemeau()">Gémeau</button>
+          <button class="button" onclick="cancer()">Cancer</button>
+          <button class="button" onclick="lion()">Lion</button>
+          <button class="button" onclick="vierge()">Vierge</button>
+          <button class="button" onclick="balance()">Balance</button>
+          <button class="button" onclick="scorpion()">Scorpion</button>
+          <button class="button" onclick="sagittaire()">Sagittaire</button>
+          <button class="button" onclick="capricorne()">Capricorne</button>
+          <button class="button" onclick="verseau()">Verseau</button>
+          <button class="button" onclick="poisson()">Poisson</button>
+        </p>
+      </div>
+      <h5 style="color:white; text-align:center; margin-top:20px;">Votre horoscope du jour!</h5>
+      <div id="quoteHoroscope" style="color:#5EFF00; text-align:justify;"></div>
+      <div style="color:White; margin-top:16px; text-align:center;">
+        <em>- Analyse astrologique par Dr. Martin Millon</em>
+      </div>
+      <script src="Horoscope.js"></script>
     </div>
-    <script src="Horoscope.js"></script>
-  </div>
 
-  <!-- Biographie -->
-  <div class="scroll" id="bib" style="display:none;">
-    <h2>Biographie</h2>
-    <h6>
-      Martin Millon commença sa découverte du monde scientifique de manière précoce, faisant l'expérience concrète des champs électriques en mettant les doigts dans la prise à l'âge de six ans. C'est depuis cette expérience enrichissante qu'il prit connaissance de sa compréhension de concepts autrement non tangibles pour les autres humains, tristement enfermés dans le monde matériel rationnel. Désirant perfectionner sa compréhension de l'univers et <em>aimant tellement les photons</em>, il entreprit de études en physique à l'EPFL.
-    </h6>
-    <figure>
-      <img src="Photos/Martin_jardinier.jpeg" alt="Martin le jardinier" title="Martin le jardinier" />
-      <figcaption>Martin à l'EPFL, déjà en harmonie avec la nature.</figcaption>
-    </figure>
-    <h6>
-      Ses études lui permirent de se familiariser avec les sciences traditionnelles qui, bien que fort limitées dans leur portée, lui donnèrent une excellente compréhension des domaines fascinants que sont la physique quantique et la cosmologie. Afin d'avoir accès à des équipements de pointe lui permettant de maximiser le couplage cosmique de ses chacras, il fit ensuite une thèse de doctorat en astrophysique car comme tout le monde le sait, <em>la thèse donne un sacré bonus.</em>
-    </h6>
-    <figure>
-      <img src="Photos/Martin_scientifique.jpeg" alt="Martin le scientifique" title="Martin le scientifique" />
-      <figcaption>Martin durant sa thèse, mesurant les bovis cosmiques dans les confins de l'Arctique.</figcaption>
-    </figure>
-    <h6>
-      L'utilisation de téléscopes ultramodernes (c'est vrai, la science "mainstream" a quand même produit des accessoires utiles) lui permit d'affiner l'harmonisation de ses flux quantiques vitaux avec les modes de vibration du <em>fond diffus cosmologique accolé</em>. C'est finalement grâce à ses fascinant travaux qu'il révolutionna la science moderne et obtenu le titre de docteur.
-    </h6>
-    <figure>
-      <img src="Photos/Martin_grimpe1.jpeg" alt="Martin le grimpeur" title="Martin le grimpeur" />
-      <figcaption>Martin rééquilibre ses niveaux d'énergie avec Marion.</figcaption>
-    </figure>
-    <figure>
-      <img src="Photos/Martin_nature1.jpeg" alt="Martin dans la nature" title="Martin dans la nature" />
-      <figcaption>Martin et Jehan harmonisent leurs Chacras.</figcaption>
-    </figure>
-    <figure>
-      <img src="Photos/Martin_bienetre.jpeg" alt="Martin le thérapeute" title="Martin le thérapeute" />
-      <figcaption>Martin avec ses disciples en camp de développement personnel.</figcaption>
-    </figure>
-    <figure>
-      <img src="Photos/Martin_grimpe2.jpeg" alt="Martin le grimpeur" title="Martin le grimpeur" />
-      <figcaption>Martin vise la lune!</figcaption>
-    </figure>
-    <figure>
-      <img src="Photos/Martin_thérapeute.jpeg" alt="Martin le thérapeute" title="Martin le thérapeute" />
-      <figcaption>Martin dirige une séance de méditation thérapeutique quantique de groupe.</figcaption>
-    </figure>
-  </div>
+    <!-- Biographie -->
+    <div class="scroll" id="bib" style="display:none;">
+      <h2>Biographie</h2>
+      <h6>
+        Martin Millon commença sa découverte du monde scientifique de manière précoce, faisant l'expérience concrète des champs électriques en mettant les doigts dans la prise à l'âge de six ans. C'est depuis cette expérience enrichissante qu'il prit connaissance de sa compréhension de concepts autrement non tangibles pour les autres humains, tristement enfermés dans le monde matériel rationnel. Désirant perfectionner sa compréhension de l'univers et <em>aimant tellement les photons</em>, il entreprit de études en physique à l'EPFL.
+      </h6>
+      <figure>
+        <img src="Photos/Martin_jardinier.jpeg" alt="Martin le jardinier" />
+        <figcaption>Martin à l'EPFL, déjà en harmonie avec la nature.</figcaption>
+      </figure>
+      <h6>
+        Ses études lui permirent de se familiariser avec les sciences traditionnelles qui, bien que fort limitées dans leur portée, lui donnèrent une excellente compréhension des domaines fascinants que sont la physique quantique et la cosmologie. Afin d'avoir accès à des équipements de pointe lui permettant de maximiser le couplage cosmique de ses chacras, il fit ensuite une thèse de doctorat en astrophysique car comme tout le monde le sait, <em>la thèse donne un sacré bonus.</em>
+      </h6>
+      <figure>
+        <img src="Photos/Martin_scientifique.jpeg" alt="Martin le scientifique" />
+        <figcaption>Martin durant sa thèse, mesurant les bovis cosmiques dans les confins de l'Arctique.</figcaption>
+      </figure>
+      <h6>
+        L'utilisation de téléscopes ultramodernes (c'est vrai, la science "mainstream" a quand même produit des accessoires utiles) lui permit d'affiner l'harmonisation de ses flux quantiques vitaux avec les modes de vibration du <em>fond diffus cosmologique accolé</em>. C'est finalement grâce à ses fascinant travaux qu'il révolutionna la science moderne et obtenu le titre de docteur.
+      </h6>
+      <figure>
+        <img src="Photos/Martin_grimpe1.jpeg" alt="Martin le grimpeur" />
+        <figcaption>Martin rééquilibre ses niveaux d'énergie avec Marion.</figcaption>
+      </figure>
+      <figure>
+        <img src="Photos/Martin_nature1.jpeg" alt="Martin dans la nature" />
+        <figcaption>Martin et Jehan harmonisent leurs Chacras.</figcaption>
+      </figure>
+      <figure>
+        <img src="Photos/Martin_bienetre.jpeg" alt="Martin le thérapeute" />
+        <figcaption>Martin avec ses disciples en camp de développement personnel.</figcaption>
+      </figure>
+      <figure>
+        <img src="Photos/Martin_grimpe2.jpeg" alt="Martin le grimpeur" />
+        <figcaption>Martin vise la lune!</figcaption>
+      </figure>
+      <figure>
+        <img src="Photos/Martin_thérapeute.jpeg" alt="Martin le thérapeute" />
+        <figcaption>Martin dirige une séance de méditation thérapeutique quantique de groupe.</figcaption>
+      </figure>
+    </div>
 
-  <!-- Article -->
-  <div class="scroll" id="article" style="display:none;">
-    <h2>La sagesse des étoiles</h2>
-    <h6>
-      Comme tout le monde le sait, mon doctorat se concentre sur l'observation de quasars lentillés. Un Quasar, abbréviation de « source de rayonnement astrologique quasi-stellaire », est un noyau de galaxie extrêmement lumineux. Cet objet, le plus lumineux connu dans l'univers, est la région compacte entourant un trou noir supermassif dont la taille est de 10 à 10 000 fois le rayon de Schwarzschild du trou noir. Ils tirent leur énergie de leur disque d'accrétion, dont <em>l'effet des forces dégageant l'orbite et comble le trou noir</em> induit une émission électromagnétique axiale dont la luminosité bolométrique atteint des valeurs suffisantes pour provoquer <em>faire annuler une nova</em>. Un quasar est identifiable par sa signature électromagnétique, nous envoyant ainsi un <em>message spatial</em>. <br>
-      Lorsqu'un quasar se trouve derrière un objet massif, la relativité générale courbe l'espace-temps et nous donne différentes images mirage du même quasar, tel que représenté figure 1.
-    </h6>
-    <figure>
-      <img src="Photos/Lentille1.jpeg" alt="Une lentille gravitationnelle" title="Une lentille gravitationnelle" />
-      <figcaption>Figure 1: les modes de vibrations harmoniques quantiques relativistes d'un quasar lentillé.</figcaption>
-    </figure>
-    <h6>
-      Comme tout le monde le sait, <em>le monde conique</em> est en pleine expansion, perturbant <em>la quote de biens des comètes</em>. <em>La théorie des supercubes</em> prédit une dépendance de la constante de Hubble sur le <em>fond diffus cosmologique accollé</em>, et donc sur la vitesse d'expansion de l'univers! Ceci est dû au fait que les photons, <em>à bout de course</em>, sont déviés de leur trajectoire originale, menant à plusieurs représentations du même objet.
-    </h6>
-    <figure>
-      <img src="Photos/Lentille2.jpg" alt="Une lentille gravitationnelle" title="Une lentille gravitationnelle" />
-      <figcaption>Figure 2: Observation d'un Quasar lentillé et des quatres représentations d'un même objet, représentant les quatres fores fondamentales du cosmos.</figcaption>
-    </figure>
-    <h6>
-      Mais comment les photons choisissent-t'ils leur trajectoire? Nos <em>doutes sont indecis</em> à ce sujet, mais mes suppositions à moi sont simplement que les puits gravitationnels aiment <em>tellement les photons</em>, comme moi d'ailleurs. Et d'ailleurs, tout n'est que vibration: la lumière, la matière, <em>l'écho des sons</em> et même nos pensées! C'est la physique quantique qui le dit! Elle dit, comme démontré par Young, que le résultat d'une expérience, dépend de l'observateur. C'est pourquoi les images miroires dépendent de l'état d'esprit de l'astrologue maniant son téléscope durant les <em>nuits paisibles.</em> Car nous faisons un avec le Cosmos, <em>abaissés devant tant de grandeur</em>, dans une fragile harmonie de vibration intriquées.
-    </h6>
-    <figure>
-      <img src="Photos/Lentille3.jpeg" alt="Une lentille gravitationnelle" title="Une lentille gravitationnelle" />
-      <figcaption>Quasar lentillé aux images miroires en trident, en référence à Poséidon, d'où le nom de la constellation.</figcaption>
-    </figure>
-    <h6>
-      C'est ainsi que durant ma thèse, je puis non seulement préciser la douzième décimale de la constante de Hubble (il le fallait bien pour contenter la communauté scientifique et obtenir des sous), mais surtout, je puis mener des expériences révolutionnaires sur l'harmonisation quantique de l'âme avec les flux magnético-gravitationnels du cosmos. Pour se faire, rien de plus simple:
-    </h6>
-    <figure>
-      <img src="Photos/Lentille4.jpeg" alt="Une lentille gravitationnelle" title="Une lentille gravitationnelle" />
-      <figcaption>Images miroires en losange, représentant en haut l'esprit de l'observateur, et en bas les trois piliers de la connaissance: la science, la nature et la logique.</figcaption>
-    </figure>
-    <h6>
-      Ne vous laissez pas <em>abuser par les mythes</em>...
-    </h6>
-  </div>
+    <!-- Article -->
+    <div class="scroll" id="article" style="display:none;">
+      <h2>La sagesse des étoiles</h2>
+      <h6>
+        Comme tout le monde le sait, mon doctorat se concentre sur l'observation de quasars lentillés. Un Quasar, abbréviation de « source de rayonnement astrologique quasi-stellaire », est un noyau de galaxie extrêmement lumineux. Cet objet, le plus lumineux connu dans l'univers, est la région compacte entourant un trou noir supermassif dont la taille est de 10 à 10 000 fois le rayon de Schwarzschild du trou noir. Ils tirent leur énergie de leur disque d'accrétion, dont <em>l'effet des forces dégageant l'orbite et comble le trou noir</em> induit une émission électromagnétique axiale dont la luminosité bolométrique atteint des valeurs suffisantes pour provoquer <em>faire annuler une nova</em>. Un quasar est identifiable par sa signature électromagnétique, nous envoyant ainsi un <em>message spatial</em>.<br>
+        Lorsqu'un quasar se trouve derrière un objet massif, la relativité générale courbe l'espace-temps et nous donne différentes images mirage du même quasar, tel que représenté figure 1.
+      </h6>
+      <figure>
+        <img src="Photos/Lentille1.jpeg" alt="Une lentille gravitationnelle" />
+        <figcaption>Figure 1: les modes de vibrations harmoniques quantiques relativistes d'un quasar lentillé.</figcaption>
+      </figure>
+      <h6>
+        Comme tout le monde le sait, <em>le monde conique</em> est en pleine expansion, perturbant <em>la quote de biens des comètes</em>. <em>La théorie des supercubes</em> prédit une dépendance de la constante de Hubble sur le <em>fond diffus cosmologique accollé</em>, et donc sur la vitesse d'expansion de l'univers! Ceci est dû au fait que les photons, <em>à bout de course</em>, sont déviés de leur trajectoire originale, menant à plusieurs représentations du même objet.
+      </h6>
+      <figure>
+        <img src="Photos/Lentille2.jpg" alt="Une lentille gravitationnelle" />
+        <figcaption>Figure 2: Observation d'un Quasar lentillé et des quatres représentations d'un même objet, représentant les quatres fores fondamentales du cosmos.</figcaption>
+      </figure>
+      <h6>
+        Mais comment les photons choisissent-t'ils leur trajectoire? Nos <em>doutes sont indecis</em> à ce sujet, mais mes suppositions à moi sont simplement que les puits gravitationnels aiment <em>tellement les photons</em>, comme moi d'ailleurs. Et d'ailleurs, tout n'est que vibration: la lumière, la matière, <em>l'écho des sons</em> et même nos pensées! C'est la physique quantique qui le dit! Elle dit, comme démontré par Young, que le résultat d'une expérience, dépend de l'observateur. C'est pourquoi les images miroires dépendent de l'état d'esprit de l'astrologue maniant son téléscope durant les <em>nuits paisibles.</em> Car nous faisons un avec le Cosmos, <em>abaissés devant tant de grandeur</em>, dans une fragile harmonie de vibration intriquées.
+      </h6>
+      <figure>
+        <img src="Photos/Lentille3.jpeg" alt="Une lentille gravitationnelle" />
+        <figcaption>Quasar lentillé aux images miroires en trident, en référence à Poséidon, d'où le nom de la constellation.</figcaption>
+      </figure>
+      <h6>
+        C'est ainsi que durant ma thèse, je puis non seulement préciser la douzième décimale de la constante de Hubble (il le fallait bien pour contenter la communauté scientifique et obtenir des sous), mais surtout, je puis mener des expériences révolutionnaires sur l'harmonisation quantique de l'âme avec les flux magnético-gravitationnels du cosmos. Pour se faire, rien de plus simple:
+      </h6>
+      <figure>
+        <img src="Photos/Lentille4.jpeg" alt="Une lentille gravitationnelle" />
+        <figcaption>Images miroires en losange, représentant en haut l'esprit de l'observateur, et en bas les trois piliers de la connaissance: la science, la nature et la logique.</figcaption>
+      </figure>
+      <h6>
+        Ne vous laissez pas <em>abuser par les mythes</em>...
+      </h6>
+    </div>
 
-  <!-- Footer -->
-  <footer>
-    <p style="color:Yellow;">Auteur: Dr. Martin Millon</p>
-    <p style="color:Yellow;"><em>... parce que la connerie, c'est con mais c'est marrant.</em></p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p style="color:Yellow;">Auteur: Dr. Martin Millon</p>
+      <p style="color:Yellow;"><em>... parce que la connerie, c'est con mais c'est marrant.</em></p>
+    </footer>
 
-  <!-- Popup Bitcoin -->
+  </div><!-- fin .page-wrapper -->
+
+  <!-- Popup Bitcoin (fixe, hors du flux) -->
   <div class="popup" onclick="popup()">
     <span class="popuptext" id="myPopup">... en bitcoin!<br>1GWA3ymKn95rKrgs8RPB8x1TpRGGLmtPYf</span>
     <img class="btc" src="Photos/Bitcoin.png" />
