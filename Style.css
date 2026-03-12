@@ -1,35 +1,50 @@
+/* =============================================
+   BASE STYLES
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   overflow-x: hidden;
-  overflow-y: hidden; 
   height: 100%;
   width: 100%;
-  position: absolute;
+  margin: 0;
+  padding: 0;
   background-color: black;
   background-image: url("Photos/background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
-  z-index: -2;
+  background-position: top center;
+  background-attachment: fixed;
 }
 
 h1.title {
   color: yellow;
-  font-weight:bold;
-}
-h4.title {
-  color: yellow;
+  font-weight: bold;
+  font-size: clamp(22px, 5vw, 40px);
+  margin: 4px 0;
 }
 
-h1, h2, h3, h4, h5{
+h4.title {
+  color: yellow;
+  font-size: clamp(14px, 3vw, 20px);
+  margin: 4px 0;
+}
+
+h1, h2, h3, h4, h5 {
   color: white;
   text-align: center;
-  font-size: 18px;
+  font-size: clamp(15px, 3vw, 18px);
 }
 
 h6 {
   color: white;
   text-align: justify;
-  font-size: 15px; ;
+  font-size: clamp(13px, 2.5vw, 15px);
+  font-weight: normal;
+  line-height: 1.6;
 }
 
 p {
@@ -38,48 +53,125 @@ p {
   font-size: 12px;
 }
 
+a {
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
 .button {
   color: blue;
   background-color: yellow;
-  padding: 5px 5px;
+  padding: 6px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: clamp(13px, 2.5vw, 16px);
   margin: 4px 2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+}
+
+/* =============================================
+   HEADER / TITLEBAR
+   ============================================= */
+
+div.titlebar {
+  text-align: center;
+  padding: 4px 10px;
+}
+
+/* =============================================
+   SIDEBAR (desktop: left column)
+   ============================================= */
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.sidebar a {
+  display: block;
+  color: lightblue;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 14px;
   cursor: pointer;
 }
 
-footer {
-  text-align: center;
-  padding: 3px;
-  width:100%;
-  position: fixed;
-  bottom: 0px;
+.sidebar a.active {
+  background-color: blue;
+  color: white;
 }
 
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* =============================================
+   MAIN CONTENT AREA
+   ============================================= */
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+
+/* =============================================
+   SCROLLABLE SECTIONS
+   ============================================= */
+
+div.scroll {
+  position: relative;
+  margin: 0 auto;
+  padding: 16px;
+  max-width: 900px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =============================================
+   IMAGES
+   ============================================= */
+
 img {
-  float: center; 
-  height: 300px;
   max-width: 100%;
+  height: auto;
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  display: block;
   padding: 10px;
 }
 
 img.Martin {
-  float:right; 
-  margin-right:2%; 
-  margin-top:2%; 
-  width:14%; 
-  height:auto; 
-  border:none;
+  float: right;
+  margin-right: 2%;
+  margin-top: 2%;
+  width: 14%;
+  height: auto;
+  border: none;
+  max-width: 140px;
 }
 
 img.btc {
-  height: 100px;
-  padding: 10px;
+  height: 60px;
+  width: auto;
+  padding: 5px;
 }
 
 figcaption {
@@ -87,193 +179,217 @@ figcaption {
   font-style: italic;
   padding: 2px;
   text-align: center;
+  font-size: clamp(11px, 2vw, 13px);
 }
 
+/* =============================================
+   FOOTER
+   ============================================= */
 
-div.scroll {
-  height: 65%;
-  left:15%; 
-  right:15%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  text-align: justify;
-  padding: 10px;
-  -webkit-overflow-scrolling: touch; 
-}
-
-div.titlebar {
-  style="position:relative; 
-  text-align: center;"
-}
-
-
- /* The side navigation menu */
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  position: fixed;
-  height: 30%;
-  overflow: auto;
-}
-
-/* Sidebar links */
-.sidebar a {
-  display: block;
-  color: lightblue;
-  padding: 16px;
-  text-decoration: none;
-}
-
-/* Active/current link */
-.sidebar a.active {
-  background-color: blue;
-  color: white;
-}
-
-
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-/* On screens that are less than X pixel wide, make the sidebar into a topbar */
-@media screen and (max-width: 1200px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-  
-  div.scroll {
-  height: 60%;
-  left:1px; 
-  right:10px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  text-align: justify;
-  -webkit-overflow-scrolling: touch; 
-  }
-  
-  h1.title {
-  color: yellow;
-  font-weight:bold;
-  font-size: 50px;
-  }
-  h4.title {
-    color: yellow;
-    font-size: 35px;
-  }
-  a {
-    font-size: 20px;
-  }
-  h1, h2, h3, h4, h5 {
-    color: white;
-    text-align: center;
-    font-size: 20px;
-  }
-
-  h6 {
-    color: white;
-    text-align: justify;
-    font-size: 20px;
-  }
-  
-  .button {
-  color: blue;
-  background-color: yellow;
-  padding: 1px 1px;
+footer {
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-  
-  img.Martin {
-  float:right; 
-  margin-right:2%; 
-  margin-top:0%; 
-  width:25%; 
-  height:auto; 
-  border:none;
-  }
-  
-  img.btc {
-  float:right; 
-  margin-right:2%; 
-  margin-bottom:0%; 
-  width:35%; 
-  height:auto; 
-  border:none;
-  }
-  
-  div.titlebar {
-    style="position:relative; 
-    text-align: left;"
-  }
+  padding: 6px;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
 }
 
- /* Popup container */
+footer p {
+  margin: 2px 0;
+}
+
+/* =============================================
+   POPUP (Bitcoin)
+   ============================================= */
+
 .popup {
-  position: relative;
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
   display: inline-block;
   cursor: pointer;
+  z-index: 200;
 }
 
-/* The actual popup (appears on top) */
 .popup .popuptext {
   visibility: hidden;
-  width: 500px;
+  width: min(280px, 80vw);
   background-color: yellow;
   color: blue;
   text-align: center;
   border-radius: 6px;
-  padding: 8px 0;
+  padding: 8px;
+  font-size: 12px;
+  word-break: break-all;
   position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  right: 50%;
-  margin-right: -20px;
+  z-index: 201;
+  bottom: 110%;
+  right: 0;
 }
 
-/* Popup arrow */
 .popup .popuptext::after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 90%;
+  right: 12px;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: Yellow transparent transparent transparent;
+  border-color: yellow transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
+  animation: fadeIn 1s;
 }
 
-/* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-} 
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* =============================================
+   RESPONSIVE — TABLETTE (max 900px)
+   ============================================= */
+
+@media screen and (max-width: 900px) {
+
+  /* Sidebar devient une topbar */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.75);
+  }
+
+  .sidebar a {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 13px;
+    min-width: 80px;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+
+  div.scroll {
+    padding: 12px;
+  }
+
+  img.Martin {
+    width: 22%;
+    max-width: 110px;
+  }
+}
+
+
+/* =============================================
+   RESPONSIVE — MOBILE (max 600px)
+   ============================================= */
+
+@media screen and (max-width: 600px) {
+
+  /* Header: portrait compact */
+  img.Martin {
+    float: none;
+    display: block;
+    margin: 8px auto 0;
+    width: 40%;
+    max-width: 120px;
+  }
+
+  div.titlebar {
+    text-align: center;
+    padding: 6px 10px 4px;
+  }
+
+  /* Sidebar: topbar avec liens en colonne 2×2 */
+  .sidebar {
+    flex-wrap: wrap;
+  }
+
+  .sidebar a {
+    flex: 1 1 45%;
+    font-size: 13px;
+    padding: 10px 4px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Sections scrollables : plein écran */
+  div.scroll {
+    padding: 10px 12px 80px; /* padding-bottom pour éviter overlap footer */
+    max-width: 100%;
+  }
+
+  /* Textes */
+  h6 {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  /* Images: pleine largeur sur mobile */
+  img {
+    max-width: 92%;
+    height: auto;
+    padding: 6px;
+  }
+
+  img.btc {
+    height: 50px;
+  }
+
+  /* Boutons horoscope: grille */
+  #horoscope p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .button {
+    flex: 1 1 calc(33% - 6px);
+    min-width: 80px;
+    max-width: 120px;
+    font-size: 13px;
+    padding: 8px 4px;
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    padding: 8px 12px;
+    position: relative;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+
+  /* Popup bitcoin: ancré en bas à droite, taille réduite */
+  .popup {
+    bottom: 6px;
+    right: 6px;
+  }
+
+  .popup .popuptext {
+    width: min(240px, 85vw);
+    font-size: 11px;
+    right: 0;
+  }
+}
