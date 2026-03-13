@@ -45,7 +45,6 @@
         <em>— Dr. Martin Millon</em><br><br>
         <button class="button" onclick="newQuote()">✦ Plus de sagesse ✦</button>
       </div>
-      <script src="javascript.js"></script>
     </div>
 
     <!-- ══ HOROSCOPE ════════════════════════════════════════ -->
@@ -75,7 +74,6 @@
       <div style="color:#A09880; margin-top:20px; text-align:center; font-style:italic; font-size:14px;">
         — Analyse astrologique par Dr. Martin Millon, PhD EPFL
       </div>
-      <script src="Horoscope.js"></script>
     </div>
 
     <!-- ══ COMPATIBILITÉ ════════════════════════════════════ -->
@@ -259,7 +257,9 @@
     <img class="btc" src="Photos/Bitcoin.png" />
   </div>
 
-  <!-- Effets visuels (étoiles + curseur) -->
+  <!-- Scripts — ordre important : javascript → Horoscope → visual -->
+  <script src="javascript.js"></script>
+  <script src="Horoscope.js"></script>
   <script src="visual.js"></script>
 
 </body>
