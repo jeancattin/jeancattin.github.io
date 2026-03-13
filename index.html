@@ -10,29 +10,29 @@
 
 <body>
 
-  <!-- Sidebar / topbar navigation (fixe sur desktop, topbar sur mobile) -->
+  <!-- Sidebar / topbar navigation -->
   <div class="sidebar">
-    <a id="homebutton" class="active" onclick="showHome()">Home</a>
-    <a id="horoscopebutton" onclick="showHoroscope()">Horoscope</a>
-    <a id="bibbutton" onclick="showBib()">Biographie</a>
-    <a id="articlebutton" onclick="showArticle()">Article: La sagesse des étoiles</a>
+    <a id="homebutton"     class="active" onclick="showSection('home')">Home</a>
+    <a id="horoscopebutton"              onclick="showSection('horoscope')">Horoscope</a>
+    <a id="compatbutton"                 onclick="showSection('compat')">Compatibilité 💑</a>
+    <a id="consultbutton"                onclick="showSection('consult')">Consultation 🔭</a>
+    <a id="bibbutton"                    onclick="showSection('bib')">Biographie</a>
+    <a id="articlebutton"                onclick="showSection('article')">Article</a>
   </div>
 
-  <!-- Wrapper principal (décalé de 200px à gauche sur desktop) -->
   <div class="page-wrapper">
 
-    <!-- Header avec photo + titre -->
+    <!-- Header -->
     <div class="site-header">
       <img class="Martin" src="Photos/Martin_home.png"
-        alt="Martin l'astrologue"
-        title="Martin l'astrologue" />
+        alt="Martin l'astrologue" title="Martin l'astrologue" />
       <div class="titlebar">
         <h1 class="title">Le <em>Cosmos</em> vous parle</h1>
         <h4 class="title">Blog astrologique de Dr. Martin Millon</h4>
       </div>
     </div>
 
-    <!-- Page d'accueil -->
+    <!-- ══ HOME ══════════════════════════════════════════════ -->
     <div id="home" class="scroll">
       <h5>Sagesse cosmique du jour:</h5>
       <div id="quoteDisplay" style="color:Tomato; text-align:center;"></div>
@@ -43,14 +43,14 @@
       <script src="javascript.js"></script>
     </div>
 
-    <!-- Horoscope -->
+    <!-- ══ HOROSCOPE ════════════════════════════════════════ -->
     <div id="horoscope" class="scroll" style="display:none;">
       <div style="color:White; text-align:center;">
         <h5 style="color:white; text-align:center;">Mon signe astro:</h5>
         <p>
           <button class="button" onclick="belier()">Bélier</button>
           <button class="button" onclick="taureau()">Taureau</button>
-          <button class="button" onclick="gemeau()">Gémeau</button>
+          <button class="button" onclick="gemeau()">Gémeaux</button>
           <button class="button" onclick="cancer()">Cancer</button>
           <button class="button" onclick="lion()">Lion</button>
           <button class="button" onclick="vierge()">Vierge</button>
@@ -59,7 +59,7 @@
           <button class="button" onclick="sagittaire()">Sagittaire</button>
           <button class="button" onclick="capricorne()">Capricorne</button>
           <button class="button" onclick="verseau()">Verseau</button>
-          <button class="button" onclick="poisson()">Poisson</button>
+          <button class="button" onclick="poisson()">Poissons</button>
         </p>
       </div>
       <h5 style="color:white; text-align:center; margin-top:20px;">Votre horoscope du jour!</h5>
@@ -70,7 +70,91 @@
       <script src="Horoscope.js"></script>
     </div>
 
-    <!-- Biographie -->
+    <!-- ══ COMPATIBILITÉ ════════════════════════════════════ -->
+    <div id="compat" class="scroll" style="display:none;">
+      <h2>Compatibilité Amoureuse Quantique</h2>
+      <h6 style="text-align:center; color:#FFD700;">
+        Le Dr. Millon analyse l'intrication vibratoire entre deux signes 
+        avec la rigueur scientifique qui le caractérise.
+      </h6>
+
+      <div style="text-align:center; margin: 20px 0;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:16px; margin-bottom:20px;">
+
+          <div>
+            <p style="color:yellow; margin-bottom:6px;">Premier signe :</p>
+            <select id="signe1" style="background:#111; color:white; border:1px solid yellow;
+                    padding:8px 12px; font-size:14px; border-radius:4px; cursor:pointer;">
+              <option value="">— Choisir —</option>
+              <option>Bélier</option><option>Taureau</option><option>Gémeaux</option>
+              <option>Cancer</option><option>Lion</option><option>Vierge</option>
+              <option>Balance</option><option>Scorpion</option><option>Sagittaire</option>
+              <option>Capricorne</option><option>Verseau</option><option>Poissons</option>
+            </select>
+          </div>
+
+          <div style="color:white; font-size:28px; padding-top:20px;">💞</div>
+
+          <div>
+            <p style="color:yellow; margin-bottom:6px;">Deuxième signe :</p>
+            <select id="signe2" style="background:#111; color:white; border:1px solid yellow;
+                    padding:8px 12px; font-size:14px; border-radius:4px; cursor:pointer;">
+              <option value="">— Choisir —</option>
+              <option>Bélier</option><option>Taureau</option><option>Gémeaux</option>
+              <option>Cancer</option><option>Lion</option><option>Vierge</option>
+              <option>Balance</option><option>Scorpion</option><option>Sagittaire</option>
+              <option>Capricorne</option><option>Verseau</option><option>Poissons</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="button" onclick="analyserCompatibilite()" style="font-size:15px; padding:10px 20px;">
+          ✦ Analyser l'intrication cosmique ✦
+        </button>
+      </div>
+
+      <div id="resultatCompat" style="color:#FFB6C1; text-align:justify; margin-top:10px;"></div>
+      <div style="color:White; margin-top:16px; text-align:center;">
+        <em>- Analyse vibratoire par Dr. Martin Millon, PhD</em>
+      </div>
+    </div>
+
+    <!-- ══ CONSULTATION ══════════════════════════════════════ -->
+    <div id="consult" class="scroll" style="display:none;">
+      <h2>Consultation Privée</h2>
+      <h6 style="text-align:center; color:#FFD700;">
+        Posez votre question au Dr. Millon. Il répondra avec toute la 
+        rigueur scientifique et la clairvoyance cosmique qui font sa réputation.
+      </h6>
+
+      <!-- Historique de la conversation -->
+      <div id="chatHistory" style="margin: 16px 0;"></div>
+
+      <!-- Zone de saisie -->
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;">
+        <textarea id="userQuestion"
+          placeholder="Dr. Millon, j'ai un entretien d'embauche demain, que disent les astres ?"
+          style="flex:1; min-width:200px; background:#111; color:white;
+                 border:1px solid yellow; padding:10px; font-size:13px;
+                 border-radius:4px; resize:vertical; min-height:70px;
+                 font-family:verdana;"></textarea>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <button class="button" onclick="envoyerQuestion()" style="padding:10px 16px; white-space:nowrap;">
+            ✦ Consulter
+          </button>
+          <button class="button" onclick="reinitialiserConsultation()"
+                  style="padding:6px 16px; font-size:12px; background:#333; color:white; white-space:nowrap;">
+            Nouvelle séance
+          </button>
+        </div>
+      </div>
+
+      <div style="color:White; margin-top:20px; text-align:center;">
+        <em>- Cabinet astrologique du Dr. Martin Millon, PhD EPFL</em>
+      </div>
+    </div>
+
+    <!-- ══ BIOGRAPHIE ════════════════════════════════════════ -->
     <div class="scroll" id="bib" style="display:none;">
       <h2>Biographie</h2>
       <h6>
@@ -112,7 +196,7 @@
       </figure>
     </div>
 
-    <!-- Article -->
+    <!-- ══ ARTICLE ═══════════════════════════════════════════ -->
     <div class="scroll" id="article" style="display:none;">
       <h2>La sagesse des étoiles</h2>
       <h6>
@@ -128,25 +212,23 @@
       </h6>
       <figure>
         <img src="Photos/Lentille2.jpg" alt="Une lentille gravitationnelle" />
-        <figcaption>Figure 2: Observation d'un Quasar lentillé et des quatres représentations d'un même objet, représentant les quatres fores fondamentales du cosmos.</figcaption>
+        <figcaption>Figure 2: Observation d'un Quasar lentillé et des quatres représentations d'un même objet.</figcaption>
       </figure>
       <h6>
-        Mais comment les photons choisissent-t'ils leur trajectoire? Nos <em>doutes sont indecis</em> à ce sujet, mais mes suppositions à moi sont simplement que les puits gravitationnels aiment <em>tellement les photons</em>, comme moi d'ailleurs. Et d'ailleurs, tout n'est que vibration: la lumière, la matière, <em>l'écho des sons</em> et même nos pensées! C'est la physique quantique qui le dit! Elle dit, comme démontré par Young, que le résultat d'une expérience, dépend de l'observateur. C'est pourquoi les images miroires dépendent de l'état d'esprit de l'astrologue maniant son téléscope durant les <em>nuits paisibles.</em> Car nous faisons un avec le Cosmos, <em>abaissés devant tant de grandeur</em>, dans une fragile harmonie de vibration intriquées.
+        Mais comment les photons choisissent-t'ils leur trajectoire? Nos <em>doutes sont indecis</em> à ce sujet, mais mes suppositions à moi sont simplement que les puits gravitationnels aiment <em>tellement les photons</em>, comme moi d'ailleurs. Et d'ailleurs, tout n'est que vibration: la lumière, la matière, <em>l'écho des sons</em> et même nos pensées!
       </h6>
       <figure>
         <img src="Photos/Lentille3.jpeg" alt="Une lentille gravitationnelle" />
-        <figcaption>Quasar lentillé aux images miroires en trident, en référence à Poséidon, d'où le nom de la constellation.</figcaption>
+        <figcaption>Quasar lentillé aux images miroires en trident, en référence à Poséidon.</figcaption>
       </figure>
       <h6>
-        C'est ainsi que durant ma thèse, je puis non seulement préciser la douzième décimale de la constante de Hubble (il le fallait bien pour contenter la communauté scientifique et obtenir des sous), mais surtout, je puis mener des expériences révolutionnaires sur l'harmonisation quantique de l'âme avec les flux magnético-gravitationnels du cosmos. Pour se faire, rien de plus simple:
+        C'est ainsi que durant ma thèse, je puis non seulement préciser la douzième décimale de la constante de Hubble, mais surtout, je puis mener des expériences révolutionnaires sur l'harmonisation quantique de l'âme avec les flux magnético-gravitationnels du cosmos.
       </h6>
       <figure>
         <img src="Photos/Lentille4.jpeg" alt="Une lentille gravitationnelle" />
-        <figcaption>Images miroires en losange, représentant en haut l'esprit de l'observateur, et en bas les trois piliers de la connaissance: la science, la nature et la logique.</figcaption>
+        <figcaption>Images miroires en losange, représentant les trois piliers de la connaissance.</figcaption>
       </figure>
-      <h6>
-        Ne vous laissez pas <em>abuser par les mythes</em>...
-      </h6>
+      <h6>Ne vous laissez pas <em>abuser par les mythes</em>...</h6>
     </div>
 
     <!-- Footer -->
@@ -157,11 +239,13 @@
 
   </div><!-- fin .page-wrapper -->
 
-  <!-- Popup Bitcoin (fixe, hors du flux) -->
+  <!-- Popup Bitcoin -->
   <div class="popup" onclick="popup()">
     <span class="popuptext" id="myPopup">... en bitcoin!<br>1GWA3ymKn95rKrgs8RPB8x1TpRGGLmtPYf</span>
     <img class="btc" src="Photos/Bitcoin.png" />
   </div>
+
+  <script src="Horoscope.js"></script>
 
 </body>
 </html>
