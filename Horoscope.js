@@ -38,7 +38,7 @@ function injecterStyles() {
 
 // ── Loader animé ──────────────────────────────────────────────
 function loader(texte) {
-  texte = texte || "Dr. Millon consulte les astres…";
+  texte = texte || "Dr. Millon rédige sa sagesse…";
   return `<div style="text-align:center;padding:28px;color:#A09880;font-style:italic;font-family:'Crimson Text',serif;">
     ${texte}
     <div style="margin-top:14px;font-size:28px;color:#F0C040;display:inline-block;
@@ -167,7 +167,7 @@ async function analyserCompatibilite() {
   display.innerHTML = loader("Dr. Millon calcule l'intrication vibratoire…");
 
   var systemCompat = PERSONNALITE + "\n\nTu analyses de manière parodique la compatibilité amoureuse entre deux signes astrologiques.\n"
-    + "Structure ta réponse en 3 parties courtes bien distinctes (séparées par une ligne vide) :\n"
+    + "Structure ta réponse en 3 parties courtes et concises bien distinctes (séparées par une ligne vide) :\n"
     + "1. L'analyse cosmique de la combinaison (pseudo-scientifique et absurde)\n"
     + "2. Les points de friction vibratoire (les problèmes, formulés dramatiquement)\n"
     + "3. Le verdict final avec un score de compatibilité sur 10 et un conseil de survie\n"
@@ -238,7 +238,7 @@ async function envoyerQuestion() {
     + "Tu réponds aux questions personnelles de ton client en restant totalement en personnage.\n"
     + "Tu relies toujours la situation personnelle du client à des phénomènes cosmologiques réels ou pseudo-scientifiques.\n"
     + "Tu peux te souvenir du contexte de la conversation pour des réponses cohérentes.\n"
-    + "Réponds en 2-3 phrases maximum, comme une conversation normale. Entretiens la conversation et pose des questions absurdes si la situation le requiert. Conclus par un conseil pratique absurde si cela est pertinent.";
+    + "Réponds en 1-2 phrases maximum, comme une conversation normale. Entretiens la conversation et pose des questions absurdes si la situation le requiert. Conclus par un conseil pratique absurde si cela est pertinent.";
 
   try {
     var texte = await appelClaude(systemConsult, historiqueConsultation, 450);
