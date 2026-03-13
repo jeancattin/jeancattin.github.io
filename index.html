@@ -3,51 +3,57 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords" content="Martin Millon" />
+  <meta name="keywords" content="Martin Millon astrologue astrophysicien" />
   <title>Martin Millon l'astrologue</title>
-  <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="Style.css" />
 </head>
 
 <body>
 
   <!-- Sidebar / topbar navigation -->
   <div class="sidebar">
-    <a id="homebutton"     class="active" onclick="showSection('home')">Home</a>
-    <a id="horoscopebutton"              onclick="showSection('horoscope')">Horoscope</a>
-    <a id="compatbutton"                 onclick="showSection('compat')">Compatibilité 💑</a>
-    <a id="consultbutton"                onclick="showSection('consult')">Consultation 🔭</a>
-    <a id="bibbutton"                    onclick="showSection('bib')">Biographie</a>
-    <a id="articlebutton"                onclick="showSection('article')">Article</a>
+    <a id="homebutton"      class="active" onclick="showSection('home')">Home</a>
+    <a id="horoscopebutton"               onclick="showSection('horoscope')">Horoscope</a>
+    <a id="compatbutton"                  onclick="showSection('compat')">Compatibilité 💑</a>
+    <a id="consultbutton"                 onclick="showSection('consult')">Consultation 🔭</a>
+    <a id="bibbutton"                     onclick="showSection('bib')">Biographie</a>
+    <a id="articlebutton"                 onclick="showSection('article')">Article</a>
   </div>
 
   <div class="page-wrapper">
 
     <!-- Header -->
     <div class="site-header">
+      <!-- Halo animé derrière Martin -->
+      <div class="martin-halo"></div>
       <img class="Martin" src="Photos/Martin_home.png"
-        alt="Martin l'astrologue" title="Martin l'astrologue" />
+           alt="Martin l'astrologue" title="Martin l'astrologue" />
       <div class="titlebar">
-        <h1 class="title">Le <em>Cosmos</em> vous parle</h1>
+        <h1 class="title" data-text="Le Cosmos vous parle">Le <em style="-webkit-text-fill-color:inherit;color:inherit;">Cosmos</em> vous parle</h1>
         <h4 class="title">Blog astrologique de Dr. Martin Millon</h4>
       </div>
     </div>
 
     <!-- ══ HOME ══════════════════════════════════════════════ -->
     <div id="home" class="scroll">
-      <h5>Sagesse cosmique du jour:</h5>
-      <div id="quoteDisplay" style="color:Tomato; text-align:center;"></div>
-      <div style="color:Tomato; text-align:center; margin-top:10px;">
-        <em>- <br> Dr. Martin Millon </br></em>
-        <button class="button" onclick="newQuote()">Plus de sagesse!</button>
+      <h5>✦ Sagesse cosmique du jour ✦</h5>
+      <div id="quoteDisplay" style="color:#FF6B6B; text-align:center; font-style:italic; font-size:18px; min-height:40px;"></div>
+
+      <div class="separator"><span>✦</span></div>
+
+      <div style="text-align:center; color:#FF6B6B;">
+        <em>— Dr. Martin Millon</em><br><br>
+        <button class="button" onclick="newQuote()">✦ Plus de sagesse ✦</button>
       </div>
       <script src="javascript.js"></script>
     </div>
 
     <!-- ══ HOROSCOPE ════════════════════════════════════════ -->
     <div id="horoscope" class="scroll" style="display:none;">
-      <div style="color:White; text-align:center;">
-        <h5 style="color:white; text-align:center;">Mon signe astro:</h5>
-        <p>
+      <h2>Horoscope du Mois</h2>
+      <div style="text-align:center;">
+        <h5 style="margin-bottom:16px;">Choisissez votre signe :</h5>
+        <p style="text-align:center;">
           <button class="button" onclick="belier()">Bélier</button>
           <button class="button" onclick="taureau()">Taureau</button>
           <button class="button" onclick="gemeau()">Gémeaux</button>
@@ -62,10 +68,12 @@
           <button class="button" onclick="poisson()">Poissons</button>
         </p>
       </div>
-      <h5 style="color:white; text-align:center; margin-top:20px;">Votre horoscope du jour!</h5>
-      <div id="quoteHoroscope" style="color:#5EFF00; text-align:justify;"></div>
-      <div style="color:White; margin-top:16px; text-align:center;">
-        <em>- Analyse astrologique par Dr. Martin Millon</em>
+
+      <div class="separator"><span>✦</span></div>
+
+      <div id="quoteHoroscope" style="color:#5EFF00;"></div>
+      <div style="color:#A09880; margin-top:20px; text-align:center; font-style:italic; font-size:14px;">
+        — Analyse astrologique par Dr. Martin Millon, PhD EPFL
       </div>
       <script src="Horoscope.js"></script>
     </div>
@@ -73,18 +81,17 @@
     <!-- ══ COMPATIBILITÉ ════════════════════════════════════ -->
     <div id="compat" class="scroll" style="display:none;">
       <h2>Compatibilité Amoureuse Quantique</h2>
-      <h6 style="text-align:center; color:#FFD700;">
-        Le Dr. Millon analyse l'intrication vibratoire entre deux signes 
+      <p style="text-align:center; font-style:italic; color:#A09880; margin-bottom:24px;">
+        Le Dr. Millon analyse l'intrication vibratoire entre deux signes<br>
         avec la rigueur scientifique qui le caractérise.
-      </h6>
+      </p>
 
-      <div style="text-align:center; margin: 20px 0;">
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:16px; margin-bottom:20px;">
+      <div style="text-align:center; margin: 24px 0;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-end; gap:20px; margin-bottom:24px;">
 
-          <div>
-            <p style="color:yellow; margin-bottom:6px;">Premier signe :</p>
-            <select id="signe1" style="background:#111; color:white; border:1px solid yellow;
-                    padding:8px 12px; font-size:14px; border-radius:4px; cursor:pointer;">
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <label style="color:var(--or); font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.06em;">PREMIER SIGNE</label>
+            <select id="signe1">
               <option value="">— Choisir —</option>
               <option>Bélier</option><option>Taureau</option><option>Gémeaux</option>
               <option>Cancer</option><option>Lion</option><option>Vierge</option>
@@ -93,12 +100,11 @@
             </select>
           </div>
 
-          <div style="color:white; font-size:28px; padding-top:20px;">💞</div>
+          <div style="color:var(--or); font-size:32px; padding-bottom:6px;">💞</div>
 
-          <div>
-            <p style="color:yellow; margin-bottom:6px;">Deuxième signe :</p>
-            <select id="signe2" style="background:#111; color:white; border:1px solid yellow;
-                    padding:8px 12px; font-size:14px; border-radius:4px; cursor:pointer;">
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <label style="color:var(--or); font-family:'Cinzel',serif; font-size:12px; letter-spacing:0.06em;">DEUXIÈME SIGNE</label>
+            <select id="signe2">
               <option value="">— Choisir —</option>
               <option>Bélier</option><option>Taureau</option><option>Gémeaux</option>
               <option>Cancer</option><option>Lion</option><option>Vierge</option>
@@ -108,49 +114,46 @@
           </div>
         </div>
 
-        <button class="button" onclick="analyserCompatibilite()" style="font-size:15px; padding:10px 20px;">
+        <button class="button" onclick="analyserCompatibilite()" style="font-size:14px; padding:12px 24px;">
           ✦ Analyser l'intrication cosmique ✦
         </button>
       </div>
 
-      <div id="resultatCompat" style="color:#FFB6C1; text-align:justify; margin-top:10px;"></div>
-      <div style="color:White; margin-top:16px; text-align:center;">
-        <em>- Analyse vibratoire par Dr. Martin Millon, PhD</em>
+      <div class="separator"><span>✦</span></div>
+
+      <div id="resultatCompat" style="color:#FFB6C1;"></div>
+      <div style="color:#A09880; margin-top:20px; text-align:center; font-style:italic; font-size:14px;">
+        — Synastrie quantique par Dr. Martin Millon, PhD EPFL
       </div>
     </div>
 
     <!-- ══ CONSULTATION ══════════════════════════════════════ -->
     <div id="consult" class="scroll" style="display:none;">
       <h2>Consultation Privée</h2>
-      <h6 style="text-align:center; color:#FFD700;">
-        Posez votre question au Dr. Millon. Il répondra avec toute la 
-        rigueur scientifique et la clairvoyance cosmique qui font sa réputation.
-      </h6>
+      <p style="text-align:center; font-style:italic; color:#A09880; margin-bottom:28px;">
+        Posez votre question au Dr. Millon. Il répondra avec toute la rigueur<br>
+        scientifique et la clairvoyance cosmique qui font sa réputation.
+      </p>
 
-      <!-- Historique de la conversation -->
-      <div id="chatHistory" style="margin: 16px 0;"></div>
+      <div id="chatHistory" style="margin-bottom:20px;"></div>
 
-      <!-- Zone de saisie -->
-      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;">
+      <div style="display:flex; flex-wrap:wrap; gap:10px;">
         <textarea id="userQuestion"
           placeholder="Dr. Millon, j'ai un entretien d'embauche demain, que disent les astres ?"
-          style="flex:1; min-width:200px; background:#111; color:white;
-                 border:1px solid yellow; padding:10px; font-size:13px;
-                 border-radius:4px; resize:vertical; min-height:70px;
-                 font-family:verdana;"></textarea>
+          style="flex:1; min-width:200px; min-height:80px;"></textarea>
         <div style="display:flex; flex-direction:column; gap:8px;">
-          <button class="button" onclick="envoyerQuestion()" style="padding:10px 16px; white-space:nowrap;">
+          <button class="button" onclick="envoyerQuestion()" style="padding:12px 18px; white-space:nowrap;">
             ✦ Consulter
           </button>
           <button class="button" onclick="reinitialiserConsultation()"
-                  style="padding:6px 16px; font-size:12px; background:#333; color:white; white-space:nowrap;">
+                  style="padding:8px 18px; font-size:12px; background:rgba(255,255,255,0.08); color:var(--texte2); box-shadow:none;">
             Nouvelle séance
           </button>
         </div>
       </div>
 
-      <div style="color:White; margin-top:20px; text-align:center;">
-        <em>- Cabinet astrologique du Dr. Martin Millon, PhD EPFL</em>
+      <div style="color:#A09880; margin-top:24px; text-align:center; font-style:italic; font-size:13px;">
+        — Cabinet astrologique du Dr. Martin Millon, PhD EPFL · Consultations en ligne
       </div>
     </div>
 
@@ -164,6 +167,9 @@
         <img src="Photos/Martin_jardinier.jpeg" alt="Martin le jardinier" />
         <figcaption>Martin à l'EPFL, déjà en harmonie avec la nature.</figcaption>
       </figure>
+
+      <div class="separator"><span>✦</span></div>
+
       <h6>
         Ses études lui permirent de se familiariser avec les sciences traditionnelles qui, bien que fort limitées dans leur portée, lui donnèrent une excellente compréhension des domaines fascinants que sont la physique quantique et la cosmologie. Afin d'avoir accès à des équipements de pointe lui permettant de maximiser le couplage cosmique de ses chacras, il fit ensuite une thèse de doctorat en astrophysique car comme tout le monde le sait, <em>la thèse donne un sacré bonus.</em>
       </h6>
@@ -171,6 +177,9 @@
         <img src="Photos/Martin_scientifique.jpeg" alt="Martin le scientifique" />
         <figcaption>Martin durant sa thèse, mesurant les bovis cosmiques dans les confins de l'Arctique.</figcaption>
       </figure>
+
+      <div class="separator"><span>✦</span></div>
+
       <h6>
         L'utilisation de téléscopes ultramodernes (c'est vrai, la science "mainstream" a quand même produit des accessoires utiles) lui permit d'affiner l'harmonisation de ses flux quantiques vitaux avec les modes de vibration du <em>fond diffus cosmologique accolé</em>. C'est finalement grâce à ses fascinant travaux qu'il révolutionna la science moderne et obtenu le titre de docteur.
       </h6>
@@ -198,54 +207,60 @@
 
     <!-- ══ ARTICLE ═══════════════════════════════════════════ -->
     <div class="scroll" id="article" style="display:none;">
-      <h2>La sagesse des étoiles</h2>
+      <h2>La Sagesse des Étoiles</h2>
       <h6>
-        Comme tout le monde le sait, mon doctorat se concentre sur l'observation de quasars lentillés. Un Quasar, abbréviation de « source de rayonnement astrologique quasi-stellaire », est un noyau de galaxie extrêmement lumineux. Cet objet, le plus lumineux connu dans l'univers, est la région compacte entourant un trou noir supermassif dont la taille est de 10 à 10 000 fois le rayon de Schwarzschild du trou noir. Ils tirent leur énergie de leur disque d'accrétion, dont <em>l'effet des forces dégageant l'orbite et comble le trou noir</em> induit une émission électromagnétique axiale dont la luminosité bolométrique atteint des valeurs suffisantes pour provoquer <em>faire annuler une nova</em>. Un quasar est identifiable par sa signature électromagnétique, nous envoyant ainsi un <em>message spatial</em>.<br>
-        Lorsqu'un quasar se trouve derrière un objet massif, la relativité générale courbe l'espace-temps et nous donne différentes images mirage du même quasar, tel que représenté figure 1.
+        Comme tout le monde le sait, mon doctorat se concentre sur l'observation de quasars lentillés. Un Quasar, abbréviation de « source de rayonnement astrologique quasi-stellaire », est un noyau de galaxie extrêmement lumineux. Cet objet, le plus lumineux connu dans l'univers, est la région compacte entourant un trou noir supermassif dont la taille est de 10 à 10 000 fois le rayon de Schwarzschild du trou noir. Ils tirent leur énergie de leur disque d'accrétion, dont <em>l'effet des forces dégageant l'orbite et comble le trou noir</em> induit une émission électromagnétique axiale dont la luminosité bolométrique atteint des valeurs suffisantes pour provoquer <em>faire annuler une nova</em>. Un quasar est identifiable par sa signature électromagnétique, nous envoyant ainsi un <em>message spatial</em>.
       </h6>
       <figure>
         <img src="Photos/Lentille1.jpeg" alt="Une lentille gravitationnelle" />
-        <figcaption>Figure 1: les modes de vibrations harmoniques quantiques relativistes d'un quasar lentillé.</figcaption>
+        <figcaption>Figure 1 : les modes de vibrations harmoniques quantiques relativistes d'un quasar lentillé.</figcaption>
       </figure>
+
+      <div class="separator"><span>✦</span></div>
+
       <h6>
-        Comme tout le monde le sait, <em>le monde conique</em> est en pleine expansion, perturbant <em>la quote de biens des comètes</em>. <em>La théorie des supercubes</em> prédit une dépendance de la constante de Hubble sur le <em>fond diffus cosmologique accollé</em>, et donc sur la vitesse d'expansion de l'univers! Ceci est dû au fait que les photons, <em>à bout de course</em>, sont déviés de leur trajectoire originale, menant à plusieurs représentations du même objet.
+        Comme tout le monde le sait, <em>le monde conique</em> est en pleine expansion, perturbant <em>la quote de biens des comètes</em>. <em>La théorie des supercubes</em> prédit une dépendance de la constante de Hubble sur le <em>fond diffus cosmologique accollé</em>, et donc sur la vitesse d'expansion de l'univers ! Ceci est dû au fait que les photons, <em>à bout de course</em>, sont déviés de leur trajectoire originale, menant à plusieurs représentations du même objet.
       </h6>
       <figure>
         <img src="Photos/Lentille2.jpg" alt="Une lentille gravitationnelle" />
-        <figcaption>Figure 2: Observation d'un Quasar lentillé et des quatres représentations d'un même objet.</figcaption>
+        <figcaption>Figure 2 : Observation d'un Quasar lentillé et des quatre représentations d'un même objet.</figcaption>
       </figure>
+
+      <div class="separator"><span>✦</span></div>
+
       <h6>
-        Mais comment les photons choisissent-t'ils leur trajectoire? Nos <em>doutes sont indecis</em> à ce sujet, mais mes suppositions à moi sont simplement que les puits gravitationnels aiment <em>tellement les photons</em>, comme moi d'ailleurs. Et d'ailleurs, tout n'est que vibration: la lumière, la matière, <em>l'écho des sons</em> et même nos pensées!
+        Mais comment les photons choisissent-t'ils leur trajectoire ? Nos <em>doutes sont indecis</em> à ce sujet, mais mes suppositions à moi sont simplement que les puits gravitationnels aiment <em>tellement les photons</em>, comme moi d'ailleurs. Et d'ailleurs, tout n'est que vibration : la lumière, la matière, <em>l'écho des sons</em> et même nos pensées ! C'est la physique quantique qui le dit !
       </h6>
       <figure>
         <img src="Photos/Lentille3.jpeg" alt="Une lentille gravitationnelle" />
-        <figcaption>Quasar lentillé aux images miroires en trident, en référence à Poséidon.</figcaption>
+        <figcaption>Quasar lentillé aux images miroirs en trident, en référence à Poséidon.</figcaption>
       </figure>
       <h6>
-        C'est ainsi que durant ma thèse, je puis non seulement préciser la douzième décimale de la constante de Hubble, mais surtout, je puis mener des expériences révolutionnaires sur l'harmonisation quantique de l'âme avec les flux magnético-gravitationnels du cosmos.
+        C'est ainsi que durant ma thèse, je puis non seulement préciser la douzième décimale de la constante de Hubble, mais surtout, mener des expériences révolutionnaires sur l'harmonisation quantique de l'âme avec les flux magnético-gravitationnels du cosmos.
       </h6>
       <figure>
         <img src="Photos/Lentille4.jpeg" alt="Une lentille gravitationnelle" />
-        <figcaption>Images miroires en losange, représentant les trois piliers de la connaissance.</figcaption>
+        <figcaption>Images miroirs en losange, représentant les trois piliers de la connaissance.</figcaption>
       </figure>
       <h6>Ne vous laissez pas <em>abuser par les mythes</em>...</h6>
     </div>
 
     <!-- Footer -->
     <footer>
-      <p style="color:Yellow;">Auteur: Dr. Martin Millon</p>
-      <p style="color:Yellow;"><em>... parce que la connerie, c'est con mais c'est marrant.</em></p>
+      <p>Auteur : Dr. Martin Millon</p>
+      <p><em>... parce que la connerie, c'est con mais c'est marrant.</em></p>
     </footer>
 
   </div><!-- fin .page-wrapper -->
 
   <!-- Popup Bitcoin -->
   <div class="popup" onclick="popup()">
-    <span class="popuptext" id="myPopup">... en bitcoin!<br>1GWA3ymKn95rKrgs8RPB8x1TpRGGLmtPYf</span>
+    <span class="popuptext" id="myPopup">... en bitcoin !<br>1GWA3ymKn95rKrgs8RPB8x1TpRGGLmtPYf</span>
     <img class="btc" src="Photos/Bitcoin.png" />
   </div>
 
-  <script src="Horoscope.js"></script>
+  <!-- Effets visuels (étoiles + curseur) -->
+  <script src="visual.js"></script>
 
 </body>
 </html>
