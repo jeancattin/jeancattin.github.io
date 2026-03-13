@@ -82,7 +82,7 @@ function formaterTexte(texte, cssClass, couleur) {
 // ── Message d'erreur ──────────────────────────────────────────
 function erreurCosmos(msg) {
   return '<p style="color:#ff6b6b;font-style:italic;font-family:\'Crimson Text\',serif;">'
-    + 'Une perturbation du champ morphogénétique empêche la connexion aux astres.<br>'
+    + 'Une perturbation du champ morphogénétique empêche la vision des astres.<br>'
     + '<small>(' + msg + ')</small></p>';
 }
 
@@ -120,7 +120,7 @@ async function generateHoroscope(signe) {
   var display = document.getElementById("quoteHoroscope");
   display.innerHTML = loader();
 
-  var systemHoroscope = PERSONNALITE + "\n\nTu rédiges des horoscopes parodiques en 3-4 paragraphes.\n"
+  var systemHoroscope = PERSONNALITE + "\n\nTu est un docteur en astrophysique sérieux qui rédige des horoscopes parodiques en 3-4 paragraphes.\n"
     + "Commence par une observation cosmique pseudo-scientifique.\n"
     + "Inclus une prédiction positive ET une mise en garde absurde.\n"
     + "Termine par un conseil pratique complètement délirant.";
@@ -166,12 +166,12 @@ async function analyserCompatibilite() {
 
   display.innerHTML = loader("Dr. Millon calcule l'intrication vibratoire…");
 
-  var systemCompat = PERSONNALITE + "\n\nTu analyses la compatibilité amoureuse entre deux signes astrologiques.\n"
+  var systemCompat = PERSONNALITE + "\n\nTu es un docteur en astrophysique sérieux qui analyse de manière parodique la compatibilité amoureuse entre deux signes astrologiques.\n"
     + "Structure ta réponse en 3 parties bien distinctes (séparées par une ligne vide) :\n"
     + "1. L'analyse cosmique de la combinaison (pseudo-scientifique et absurde)\n"
     + "2. Les points de friction vibratoire (les problèmes, formulés dramatiquement)\n"
     + "3. Le verdict final avec un score de compatibilité sur 10 et un conseil de survie\n"
-    + "Sois généreux en métaphores astrophysiques et en références incongrues.";
+    + "Sois généreux en métaphores astrophysiques techniques et en références incongrues.";
 
   try {
     var texte = await appelClaude(
@@ -234,11 +234,11 @@ async function envoyerQuestion() {
 
   var loaderDiv = ajouterLoaderChat();
 
-  var systemConsult = PERSONNALITE + "\n\nTu es en séance de consultation privée.\n"
+  var systemConsult = PERSONNALITE + "\n\nTu es un docteur en astrophysique sérieux en séance de consultation privée parodique.\n"
     + "Tu réponds aux questions personnelles de ton client en restant totalement en personnage.\n"
-    + "Tu relies toujours la situation personnelle du client à des phénomènes cosmiques ou pseudo-scientifiques.\n"
+    + "Tu relies toujours la situation personnelle du client à des phénomènes cosmologiques réels ou pseudo-scientifiques.\n"
     + "Tu peux te souvenir du contexte de la conversation pour des réponses cohérentes.\n"
-    + "Réponds en 2-3 paragraphes maximum. Conclus toujours par un conseil pratique absurde.";
+    + "Réponds en 1-2 paragraphes maximum. Conclus par un conseil pratique absurde si cela est pertinent dans la conversation.";
 
   try {
     var texte = await appelClaude(systemConsult, historiqueConsultation, 450);
@@ -247,7 +247,7 @@ async function envoyerQuestion() {
     historiqueConsultation.push({ role: "assistant", content: texte });
   } catch(err) {
     loaderDiv.remove();
-    ajouterBulleChat("assistant", "Une interférence électromagnétique perturbe la séance. (" + err.message + ")");
+    ajouterBulleChat("assistant", "Dr. Martin est absent. Il braque son téléscope vers les astres, revenez plus tard. (" + err.message + ")");
   }
 }
 
