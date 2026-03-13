@@ -4,33 +4,28 @@
 
 (function () {
 
-  // ── Curseur étoile ────────────────────────────────────────
+  // ── Étoile qui suit la souris (traînée dorée) ────────────
   const cursorEl = document.createElement('div');
   cursorEl.id = 'cursor-star';
   cursorEl.textContent = '✦';
   document.body.appendChild(cursorEl);
 
-  let mx = -100, my = -100;
-
   document.addEventListener('mousemove', (e) => {
-    mx = e.clientX;
-    my = e.clientY;
-    cursorEl.style.left = mx + 'px';
-    cursorEl.style.top  = my + 'px';
+    cursorEl.style.left = e.clientX + 'px';
+    cursorEl.style.top  = e.clientY + 'px';
   });
 
   document.addEventListener('mousedown', () => {
-    cursorEl.style.transform = 'translate(-50%,-50%) scale(1.6) rotate(45deg)';
-    cursorEl.style.color = '#fff';
+    cursorEl.style.opacity = '1';
+    cursorEl.style.fontSize = '18px';
   });
   document.addEventListener('mouseup', () => {
-    cursorEl.style.transform = 'translate(-50%,-50%) scale(1) rotate(0deg)';
-    cursorEl.style.color = '';
+    cursorEl.style.opacity = '0.8';
+    cursorEl.style.fontSize = '14px';
   });
 
-  // Masque le curseur custom quand la souris quitte la fenêtre
   document.addEventListener('mouseleave', () => { cursorEl.style.opacity = '0'; });
-  document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '1'; });
+  document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '0.8'; });
 
 
   // ── Champ d'étoiles (canvas) ──────────────────────────────

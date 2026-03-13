@@ -26,7 +26,6 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: none; /* curseur custom */
 }
 
 body {
@@ -44,17 +43,17 @@ body {
   min-height: 100vh;
 }
 
-/* ── Curseur étoile custom ─────────────────────────────────── */
+/* Étoile qui suit la souris (en complément du curseur normal) */
 #cursor-star {
   position: fixed;
   pointer-events: none;
   z-index: 99999;
-  font-size: 18px;
+  font-size: 14px;
   color: var(--or);
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease;
+  transform: translate(12px, 12px);
   text-shadow: 0 0 8px var(--or);
   will-change: transform;
+  opacity: 0.8;
 }
 
 /* ── Étoiles scintillantes (canvas) ────────────────────────── */
