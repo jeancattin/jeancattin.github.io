@@ -45,6 +45,7 @@
         <em>— Dr. Martin Millon</em><br><br>
         <button class="button" onclick="newQuote()">✦ Plus de sagesse ✦</button>
       </div>
+      <script src="javascript.js"></script>
     </div>
 
     <!-- ══ HOROSCOPE ════════════════════════════════════════ -->
@@ -74,6 +75,7 @@
       <div style="color:#A09880; margin-top:20px; text-align:center; font-style:italic; font-size:14px;">
         — Analyse astrologique par Dr. Martin Millon, PhD EPFL
       </div>
+      <script src="Horoscope.js"></script>
     </div>
 
     <!-- ══ COMPATIBILITÉ ════════════════════════════════════ -->
@@ -251,15 +253,17 @@
 
   </div><!-- fin .page-wrapper -->
 
-  <!-- Popup Bitcoin -->
-  <div class="popup" onclick="popup()">
-    <span class="popuptext" id="myPopup">... en bitcoin !<br>1GWA3ymKn95rKrgs8RPB8x1TpRGGLmtPYf</span>
-    <img class="btc" src="Photos/Bitcoin.png" />
+  <!-- Bouton Soutenir le Cosmos -->
+  <div id="btc-widget">
+    <button id="btc-btn" onclick="copierBTC()">
+      <img class="btc" src="Photos/Bitcoin.png" />
+      <span id="btc-label">Soutenir le Cosmos</span>
+    </button>
+    <div id="btc-address">₿ 1GWA3ymKn95rKrgs8RPB8x1TpRGGLmtPYf</div>
+    <div id="btc-confirm">✦ Adresse copiée !</div>
   </div>
 
-  <!-- Scripts — ordre important : javascript → Horoscope → visual -->
-  <script src="javascript.js"></script>
-  <script src="Horoscope.js"></script>
+  <!-- Effets visuels (étoiles + curseur) -->
   <script src="visual.js"></script>
 
 </body>
