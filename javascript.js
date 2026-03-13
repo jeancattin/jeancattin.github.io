@@ -1,3 +1,8 @@
+// ══════════════════════════════════════════════════════════════
+//  CITATIONS — Sagesses cosmiques du Dr. Martin Millon
+//  La navigation est gérée dans Horoscope.js
+// ══════════════════════════════════════════════════════════════
+
 var quotes = [
   "La thèse donne un sacré bonus!",
   "Lorsque les planètes sont nettes, il faut augmenter la focale.",
@@ -50,72 +55,16 @@ var quotes = [
   "Bob hésite à partager sa découverte. (Robert Oppenheimer, 1944)",
   "À la TAUP 2021 World Conference, les mythos se clashent, mais je sais que tout n'est que vibration.",
   "Pour la spectroscopie relativiste, les colonnes du téléscope doivent être branchées."
-]
+];
 
 function newQuote() {
-  var randomNumber = Math.floor(Math.random() * quotes.length)
+  var randomNumber = Math.floor(Math.random() * quotes.length);
   document.getElementById("quoteDisplay").innerHTML = quotes[randomNumber];
-}
-
-window.onload = newQuote; // Runs the function on page load
-
-function showHome(){
-  document.getElementById("home").style.display = "block";
-  document.getElementById("homebutton").classList.add('active');
-  
-  document.getElementById("horoscope").style.display = "none";
-  document.getElementById("horoscopebutton").classList.remove('active');
-  
-  document.getElementById("bib").style.display = "none";
-  document.getElementById("bibbutton").classList.remove('active');
-  
-  document.getElementById("article").style.display = "none";
-  document.getElementById("articlebutton").classList.remove('active');
-}
-
-function showHoroscope(){
-  document.getElementById("home").style.display = "none";
-  document.getElementById("homebutton").classList.remove('active');
-  
-  document.getElementById("horoscope").style.display = "block";
-  document.getElementById("horoscopebutton").classList.add('active');
-  
-  document.getElementById("bib").style.display = "none";
-  document.getElementById("bibbutton").classList.remove('active');
-  
-  document.getElementById("article").style.display = "none";
-  document.getElementById("articlebutton").classList.remove('active');
-}
-
-function showBib(){
-  document.getElementById("home").style.display = "none";
-  document.getElementById("homebutton").classList.remove('active');
-  
-  document.getElementById("horoscope").style.display = "none";
-  document.getElementById("horoscopebutton").classList.remove('active');
-  
-  document.getElementById("bib").style.display = "block";
-  document.getElementById("bibbutton").classList.add('active');
-  
-  document.getElementById("article").style.display = "none";
-  document.getElementById("articlebutton").classList.remove('active');
-}
-
-function showArticle(){
-  document.getElementById("home").style.display = "none";
-  document.getElementById("homebutton").classList.remove('active');
-  
-  document.getElementById("horoscope").style.display = "none";
-  document.getElementById("horoscopebutton").classList.remove('active');
-  
-  document.getElementById("bib").style.display = "none";
-  document.getElementById("bibbutton").classList.remove('active');
-  
-  document.getElementById("article").style.display = "block";
-  document.getElementById("articlebutton").classList.add('active');
 }
 
 function popup() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
 }
+
+window.onload = newQuote;
