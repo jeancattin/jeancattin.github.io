@@ -56,18 +56,18 @@
     left:          '0',
     width:         '100%',
     height:        '100%',
-    zIndex:        '2',
+    zIndex:        '100',
     pointerEvents: 'none',
     opacity:       '0.6',
   });
   document.body.insertBefore(canvas, document.body.firstChild);
 
-  // S'assurer que le contenu passe par-dessus le canvas
+  // S'assurer que le contenu passe par-dessus le canvas (z-index 100)
   document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     const wrapper = document.querySelector('.page-wrapper');
-    if (sidebar && !sidebar.style.zIndex) sidebar.style.zIndex = '10';
-    if (wrapper && !wrapper.style.zIndex) wrapper.style.zIndex = '5';
+    if (sidebar) sidebar.style.zIndex = '200';
+    if (wrapper) wrapper.style.zIndex = '150';
   });
 
   const ctx = canvas.getContext('2d');
