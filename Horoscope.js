@@ -38,7 +38,7 @@ function injecterStyles() {
 
 // ── Loader animé ──────────────────────────────────────────────
 function loader(texte) {
-  texte = texte || "Dr. Millon rédige sa sagesse…";
+  texte = texte || "Dr. Millon analyse le cosmos…";
   return `<div style="text-align:center;padding:28px;color:#A09880;font-style:italic;font-family:'Crimson Text',serif;">
     ${texte}
     <div style="margin-top:14px;font-size:28px;color:#F0C040;display:inline-block;
