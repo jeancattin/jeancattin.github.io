@@ -1,115 +1,104 @@
 // ══════════════════════════════════════════════════════════════
-//  EFFETS VISUELS — étoiles scintillantes + curseur ✦
-//  Tous les styles sont appliqués directement en JS
-//  pour éviter tout conflit avec le CSS existant
+//  EFFETS VISUELS — étoiles CSS + curseur ✦
+//  Pas de canvas = compatible Brave et tous les navigateurs
 // ══════════════════════════════════════════════════════════════
 
 (function () {
 
-  // ── Curseur étoile ─────────────────────────────────────────
+  // ── Inject styles ─────────────────────────────────────────
+  const style = document.createElement('style');
+  style.textContent = `
+    #starfield-css {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 100;
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      animation: twinkle var(--dur) ease-in-out infinite var(--delay);
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: var(--min-op); transform: scale(1); }
+      50%       { opacity: var(--max-op); transform: scale(1.4); }
+    }
+    #cursor-star {
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 99999;
+      font-size: 14px;
+      color: #F0C040;
+      text-shadow: 0 0 8px #F0C040;
+      transform: translate(10px, 10px);
+      opacity: 0.85;
+      transition: font-size 0.1s;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // ── Curseur étoile ────────────────────────────────────────
   const cursorEl = document.createElement('div');
   cursorEl.id = 'cursor-star';
   cursorEl.textContent = '✦';
-
-  // Styles appliqués directement — pas de dépendance CSS
-  Object.assign(cursorEl.style, {
-    position:      'fixed',
-    top:           '0',
-    left:          '0',
-    pointerEvents: 'none',
-    zIndex:        '99999',
-    fontSize:      '14px',
-    color:         '#F0C040',
-    textShadow:    '0 0 8px #F0C040',
-    transform:     'translate(10px, 10px)',
-    opacity:       '0.85',
-    transition:    'font-size 0.1s',
-  });
   document.body.appendChild(cursorEl);
 
   document.addEventListener('mousemove', (e) => {
     cursorEl.style.left = e.clientX + 'px';
     cursorEl.style.top  = e.clientY + 'px';
   });
-
   document.addEventListener('mousedown', () => {
     cursorEl.style.fontSize = '20px';
-    cursorEl.style.color = '#ffffff';
+    cursorEl.style.color = '#fff';
   });
   document.addEventListener('mouseup', () => {
     cursorEl.style.fontSize = '14px';
     cursorEl.style.color = '#F0C040';
   });
-
   document.addEventListener('mouseleave', () => { cursorEl.style.opacity = '0'; });
   document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '0.85'; });
 
+  // ── Champ d'étoiles CSS ───────────────────────────────────
+  const container = document.createElement('div');
+  container.id = 'starfield-css';
+  document.body.insertBefore(container, document.body.firstChild);
 
-  // ── Champ d'étoiles (canvas) ───────────────────────────────
-  const canvas = document.createElement('canvas');
-  canvas.id = 'starfield';
+  const N = 350;
 
-  // Par-dessus le background.png, sous le contenu (z-index 1)
-  Object.assign(canvas.style, {
-    position:      'fixed',
-    top:           '0',
-    left:          '0',
-    width:         '100%',
-    height:        '100%',
-    zIndex:        '100',
-    pointerEvents: 'none',
-    opacity:       '1',
-  });
-  document.body.insertBefore(canvas, document.body.firstChild);
+  for (let i = 0; i < N; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
 
-  // S'assurer que le contenu passe par-dessus le canvas (z-index 100)
-  document.addEventListener('DOMContentLoaded', () => {
-    const sidebar = document.querySelector('.sidebar');
-    const wrapper = document.querySelector('.page-wrapper');
-    if (sidebar) sidebar.style.zIndex = '200';
-    if (wrapper) wrapper.style.zIndex = '150';
-  });
+    const size   = Math.random() * 4 + 1;                  // 1–5px
+    const x      = Math.random() * 100;
+    const y      = Math.random() * 100;
+    const dur    = (Math.random() * 3 + 1.5).toFixed(2);   // 1.5–4.5s
+    const delay  = (Math.random() * -5).toFixed(2);
+    const minOp  = (Math.random() * 0.05).toFixed(2);
+    const maxOp  = (Math.random() * 0.4 + 0.6).toFixed(2); // 0.6–1.0
+    const gold   = Math.random() < 0.2;                     // 20% dorées
+    const color  = gold ? '#F0C040' : '#D8D4FF';
 
-  const ctx = canvas.getContext('2d');
-  let stars = [];
-  const N_STARS = 180;
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
+    star.style.cssText = `
+      width: ${size}px; height: ${size}px;
+      left: ${x}%; top: ${y}%;
+      background: ${color};
+      box-shadow: 0 0 ${size * 3}px ${color};
+      --dur: ${dur}s;
+      --delay: ${delay}s;
+      --min-op: ${minOp};
+      --max-op: ${maxOp};
+    `;
+    container.appendChild(star);
   }
 
-  function initStars() {
-    stars = Array.from({ length: N_STARS }, () => ({
-      x:         Math.random() * canvas.width,
-      y:         Math.random() * canvas.height,
-      r:         Math.random() * 1.4 + 0.3,
-      phase:     Math.random() * Math.PI * 2,
-      speed:     Math.random() * 0.015 + 0.005,
-      baseAlpha: Math.random() * 0.5 + 0.3,
-      gold:      Math.random() < 0.15,
-    }));
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (const s of stars) {
-      s.phase += s.speed;
-      const alpha = s.baseAlpha * (0.5 + 0.5 * Math.sin(s.phase));
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = s.gold
-        ? `rgba(240,192,64,${alpha})`
-        : `rgba(220,215,255,${alpha})`;
-      ctx.fill();
-    }
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', () => { resize(); initStars(); });
-
-  resize();
-  initStars();
-  draw();
+  // Contenu au-dessus des étoiles
+  const sidebar = document.querySelector('.sidebar');
+  const wrapper = document.querySelector('.page-wrapper');
+  if (sidebar) sidebar.style.zIndex = '200';
+  if (wrapper) wrapper.style.zIndex = '150';
 
 })();
