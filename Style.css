@@ -35,6 +35,11 @@ body {
   line-height: 1.75;
   color: var(--texte);
   background-color: var(--fond);
+  background-image: url("Photos/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -58,8 +63,8 @@ body {
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
-  z-index: 100;
-  opacity: 1;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 /* ── Overlay sombre pour lisibilité ────────────────────────── */
@@ -74,11 +79,11 @@ body::before {
     rgba(8,8,16,0.70) 100%
   );
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* ── Tout le contenu au-dessus de l'overlay ────────────────── */
-.sidebar, .page-wrapper, .popup, #cursor-star {
+.sidebar, .page-wrapper, #cursor-star {
   position: relative;
   z-index: 10;
 }
@@ -415,18 +420,14 @@ img {
 }
 
 img.btc {
-  height: 55px;
-  width: auto;
-  padding: 4px;
+  height: 32px;
+  width: 32px;
+  padding: 0;
   display: inline;
   margin: 0;
-  border-radius: 0;
-  filter: drop-shadow(0 0 6px rgba(240,192,64,0.4));
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px rgba(240,192,64,0.5));
   transition: filter 0.3s;
-}
-
-.popup:hover img.btc {
-  filter: drop-shadow(0 0 12px rgba(240,192,64,0.8));
 }
 
 figure { margin: 24px 0; }
@@ -456,6 +457,7 @@ select {
   appearance: none;
   -webkit-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F0C040' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 36px;
 }
@@ -579,52 +581,71 @@ footer p {
   margin: 3px 0;
 }
 
-/* ── POPUP BITCOIN ─────────────────────────────────────────── */
-.popup {
+/* ── WIDGET BITCOIN ────────────────────────────────────────── */
+#btc-widget {
   position: fixed;
-  bottom: 14px;
-  right: 14px;
-  display: inline-block;
-  cursor: none;
-  z-index: 200;
-  transition: transform 0.2s;
+  bottom: 20px;
+  right: 20px;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
 
-.popup:hover { transform: scale(1.08); }
+#btc-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #1a1200, #0E0E1A);
+  border: 1px solid rgba(240,192,64,0.5);
+  border-radius: 30px;
+  padding: 8px 16px 8px 10px;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.15s;
+  box-shadow: 0 2px 16px rgba(240,192,64,0.15);
+}
+#btc-btn:hover {
+  border-color: var(--or);
+  box-shadow: 0 4px 24px rgba(240,192,64,0.4);
+  transform: translateY(-2px);
+}
+#btc-btn:active { transform: translateY(0); }
 
-.popup .popuptext {
-  visibility: hidden;
-  width: min(300px, 80vw);
-  background: linear-gradient(135deg, #1a1a0a, #0E0E1A);
-  color: var(--or);
-  border: 1px solid rgba(240,192,64,0.4);
-  text-align: center;
-  border-radius: 10px;
-  padding: 12px 14px;
+#btc-label {
   font-family: 'Cinzel', serif;
   font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--or-pale);
+}
+
+#btc-address {
+  font-family: 'Crimson Text', monospace;
+  font-size: 11px;
+  color: var(--or);
+  background: rgba(8,8,16,0.92);
+  border: 1px solid rgba(240,192,64,0.25);
+  border-radius: 6px;
+  padding: 6px 12px;
+  letter-spacing: 0.03em;
+  display: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
   word-break: break-all;
-  position: absolute;
-  z-index: 201;
-  bottom: 110%;
-  right: 0;
-  box-shadow: 0 4px 24px rgba(240,192,64,0.2);
+  max-width: 320px;
+  text-align: center;
 }
+#btc-address:hover { border-color: var(--or); }
+#btc-address.visible { display: block; animation: fadeInUp 0.3s ease forwards; }
 
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  right: 16px;
-  border-width: 6px;
-  border-style: solid;
-  border-color: rgba(240,192,64,0.4) transparent transparent transparent;
+#btc-confirm {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: var(--vert);
+  text-align: center;
+  display: none;
 }
-
-.popup .show {
-  visibility: visible;
-  animation: fadeInUp 0.3s ease forwards;
-}
+#btc-confirm.visible { display: block; animation: fadeInUp 0.3s ease forwards; }
 
 /* ── RESPONSIVE TABLETTE ───────────────────────────────────── */
 @media screen and (max-width: 900px) {
