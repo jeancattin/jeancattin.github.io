@@ -120,7 +120,7 @@ async function generateHoroscope(signe) {
   var display = document.getElementById("quoteHoroscope");
   display.innerHTML = loader();
 
-  var systemHoroscope = PERSONNALITE + "\n\nTu est un docteur en astrophysique sérieux qui rédige des horoscopes parodiques en 3-4 paragraphes.\n"
+  var systemHoroscope = PERSONNALITE + "\n\nTu rédiges des horoscopes parodiques en 2-3 paragraphes.\n"
     + "Commence par une observation cosmique pseudo-scientifique.\n"
     + "Inclus une prédiction positive ET une mise en garde absurde.\n"
     + "Termine par un conseil pratique complètement délirant.";
@@ -166,8 +166,8 @@ async function analyserCompatibilite() {
 
   display.innerHTML = loader("Dr. Millon calcule l'intrication vibratoire…");
 
-  var systemCompat = PERSONNALITE + "\n\nTu es un docteur en astrophysique sérieux qui analyse de manière parodique la compatibilité amoureuse entre deux signes astrologiques.\n"
-    + "Structure ta réponse en 3 parties bien distinctes (séparées par une ligne vide) :\n"
+  var systemCompat = PERSONNALITE + "\n\nTu analyses de manière parodique la compatibilité amoureuse entre deux signes astrologiques.\n"
+    + "Structure ta réponse en 3 parties courtes bien distinctes (séparées par une ligne vide) :\n"
     + "1. L'analyse cosmique de la combinaison (pseudo-scientifique et absurde)\n"
     + "2. Les points de friction vibratoire (les problèmes, formulés dramatiquement)\n"
     + "3. Le verdict final avec un score de compatibilité sur 10 et un conseil de survie\n"
@@ -214,7 +214,7 @@ function ajouterLoaderChat() {
   div.id = "chat-loader";
   div.className = "chat-bubble chat-martin";
   div.innerHTML = '<div class="chat-label">Dr. Martin Millon, PhD</div>'
-    + '<span style="font-style:italic;color:#A09880;">consulte les astres…'
+    + '<span style="font-style:italic;color:#A09880;">rédige sa sagesse…'
     + '<span style="display:inline-block;animation:spinStar 1.5s linear infinite;color:#F0C040;margin-left:6px;">✦</span>'
     + '</span>';
   container.appendChild(div);
@@ -234,11 +234,11 @@ async function envoyerQuestion() {
 
   var loaderDiv = ajouterLoaderChat();
 
-  var systemConsult = PERSONNALITE + "\n\nTu es un docteur en astrophysique sérieux en séance de consultation privée parodique.\n"
+  var systemConsult = PERSONNALITE + "\n\nTu es en séance de consultation privée parodique.\n"
     + "Tu réponds aux questions personnelles de ton client en restant totalement en personnage.\n"
     + "Tu relies toujours la situation personnelle du client à des phénomènes cosmologiques réels ou pseudo-scientifiques.\n"
     + "Tu peux te souvenir du contexte de la conversation pour des réponses cohérentes.\n"
-    + "Réponds en 1-2 paragraphes maximum. Conclus par un conseil pratique absurde si cela est pertinent dans la conversation.";
+    + "Réponds en 2-3 phrases maximum, comme une conversation normale. Entretiens la conversation et pose des questions absurdes si la situation le requiert. Conclus par un conseil pratique absurde si cela est pertinent.";
 
   try {
     var texte = await appelClaude(systemConsult, historiqueConsultation, 450);
