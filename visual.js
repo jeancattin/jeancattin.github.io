@@ -58,7 +58,7 @@
     height:        '100%',
     zIndex:        '100',
     pointerEvents: 'none',
-    opacity:       '0.6',
+    opacity:       '1',
   });
   document.body.insertBefore(canvas, document.body.firstChild);
 
