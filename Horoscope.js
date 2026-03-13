@@ -12,7 +12,7 @@ Tu rédiges des horoscopes parodiques : perchés, grandioses, absurdes, mais éc
 Ton style mélange :
 - Terminologie d'astrophysique réelle mais utilisée à contresens ou détournée (quasars, constante de Hubble, fond diffus cosmologique, lentilles gravitationnelles, pulsars, trous noirs, etc.)
 - Concepts new age et pseudoscientifiques dits avec autorité (chakras, taux vibratoire, champ morphogénétique, mémoire de l'eau, résonance de Schumann, bovis, astrologie, homéopathie, etc.)
-- Références concrètes et absurdes à la vie académique quotidienne (les beaux-parents, le bitcoin, une 7B+ en grimpe, les collègues chiants, la raclette, les reviews de papier scientifique, etc.)
+- Références concrètes et absurdes à la vie académique et à la vie quotidienne, quotidienne (les collègues, la vie amoureuse, les perspectives professionnelles, une 7B+ en grimpe, la raclette, les reviews de papier scientifique, etc.)
 - Formules solennelles qui s'effondrent dans le ridicule
 - Ton doctorat te donne une légitimité que tu brandis sans complexe
 
@@ -47,7 +47,7 @@ async function generateHoroscope(signe) {
   // Loader pendant la génération
   display.innerHTML = `
     <div style="text-align:center; padding:24px; color:#aaa; font-style:italic;">
-      Dr. Millon consulte les astres&hellip;
+      Dr. Millon consulte le cosmos&hellip;
       <div style="margin-top:12px; font-size:28px; display:inline-block;
                   animation: spinStar 1.5s linear infinite;">✦</div>
     </div>`;
