@@ -120,7 +120,7 @@ async function generateHoroscope(signe) {
   var display = document.getElementById("quoteHoroscope");
   display.innerHTML = loader();
 
-  var systemHoroscope = PERSONNALITE + "\n\nTu rédiges des horoscopes parodiques très courts : 2 paragraphes maximum, 2-3 phrases chacun.\n"
+  var systemHoroscope = PERSONNALITE + "\n\nTu rédiges des horoscopes parodiques assez courts : 2 à 3 paragraphes maximum, 4-5 phrases chacun.\n"
     + "Commence par une observation cosmique pseudo-scientifique.\n"
     + "Termine par un conseil pratique complètement délirant.\n"
     + "Sois percutant et concis, pas exhaustif.";
