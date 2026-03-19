@@ -48,7 +48,7 @@ function loader(texte) {
 
 // ── Appel API via le Worker ───────────────────────────────────
 async function appelClaude(system, messages, maxTokens) {
-  maxTokens = maxTokens || 500;
+  maxTokens = maxTokens || 1000;
   const response = await fetch(WORKER_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -236,7 +236,7 @@ async function envoyerQuestion() {
 
   var systemConsult = PERSONNALITE + "\n\nTu es en séance de consultation privée parodique.\n"
     + "Tu réponds aux questions personnelles de ton client en restant totalement en personnage.\n"
-    + "Tu relies toujours la situation personnelle du client à des phénomènes cosmologiques réels ou pseudo-scientifiques.\n"
+    + "Tu relies la situation personnelle du client à des phénomènes cosmologiques réels ou pseudo-scientifiques.\n"
     + "Tu peux te souvenir du contexte de la conversation pour des réponses cohérentes.\n"
     + "IMPÉRATIF : réponds en 1-2 phrases maximum, pas plus. Comme une conversation orale, courte et directe.\n"
     + "Tu peux poser une question absurde de suivi si la situation le requiert.";
