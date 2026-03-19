@@ -226,16 +226,20 @@ footer p { font-family: 'Crimson Text', serif; font-style: italic; color: var(--
 #btc-btn:hover { border-color: var(--or); box-shadow: 0 4px 24px rgba(240,192,64,0.4); transform: translateY(-2px); }
 #btc-btn:active { transform: translateY(0); }
 #btc-label { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.05em; color: var(--or-pale); }
-#btc-address {
-  font-family: 'Crimson Text', monospace; font-size: 11px; color: var(--or);
-  background: rgba(8,8,16,0.92); border: 1px solid rgba(240,192,64,0.25);
-  border-radius: 6px; padding: 6px 12px; display: none; cursor: pointer;
-  word-break: break-all; max-width: 320px; text-align: center;
-  transition: border-color 0.2s;
+#btc-qr {
+  display: none;
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 4px 24px rgba(240,192,64,0.3);
+  width: 160px;
 }
-#btc-address:hover { border-color: var(--or); }
-#btc-address.visible { display: block; animation: fadeInUp 0.3s ease forwards; }
-#btc-confirm { font-family: 'Cinzel', serif; font-size: 11px; color: var(--vert); text-align: center; display: none; }
+#btc-qr.visible { display: block; animation: fadeInUp 0.3s ease forwards; }
+#btc-confirm {
+  font-family: 'Cinzel', serif; font-size: 10px;
+  color: var(--or); text-align: center; display: none;
+  word-break: break-all; max-width: 160px;
+}
 #btc-confirm.visible { display: block; animation: fadeInUp 0.3s ease forwards; }
 
 /* ── RESPONSIVE TABLETTE ───────────────────────────────────── */

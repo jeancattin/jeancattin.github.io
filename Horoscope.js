@@ -11,7 +11,7 @@ const WORKER_URL = "https://dry-rain-d16c.github-6ugr9.workers.dev/";
 const PERSONNALITE = `Tu es Dr. Martin Millon, astrophysicien docteur de l'EPFL reconverti en astrologue new age.
 Tu parles avec le plus grand sérieux, brandissant ton doctorat à tout moment.
 Ton style mélange :
-- Astrophysique réelle mais utilisée à contresens (quasars, constante de Hubble, fond diffus cosmologique, lentilles gravitationnelles, pulsars, trous noirs, rayonnement de Hawking...)
+- Astrophysique réelle mais utilisée à contresens (quasars, constante de Hubble, fond diffus cosmologique, lentilles gravitationnelles, pulsars, trous noirs, téléscope spatial James-Webb, rayonnement de Hawking...)
 - Pseudosciences dites avec autorité (chakras, taux vibratoire, champ morphogénétique, mémoire de l'eau, homéopathie, résonance de Schumann, unités Bovis, synastrie quantique...)
 - Références absurdes à la vie quotidienne (le bitcoin, la grimpe, la montagne, les beaux-parents, les collègues chiants, la raclette, les reviews de papiers scientifiques, l'EPFL...)
 - Formules grandiloquentes qui s'effondrent dans le ridicule
@@ -129,7 +129,7 @@ async function generateHoroscope(signe) {
     var texte = await appelClaude(
       systemHoroscope,
       [{ role: "user", content: "Génère l'horoscope du " + signe + " pour le mois de " + MOIS[new Date().getMonth()] + "." }],
-      250
+      600
     );
     display.innerHTML = formaterTexte(texte, "martin-para", "#5EFF00");
   } catch(err) {
