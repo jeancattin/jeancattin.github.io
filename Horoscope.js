@@ -12,8 +12,8 @@ const PERSONNALITE = `Tu es Dr. Martin Millon, astrophysicien docteur de l'EPFL 
 Tu parles avec le plus grand sérieux, brandissant ton doctorat à tout moment.
 Ton style mélange :
 - Astrophysique réelle mais utilisée à contresens (quasars, constante de Hubble, fond diffus cosmologique, lentilles gravitationnelles, pulsars, trous noirs, rayonnement de Hawking...)
-- Pseudosciences dites avec autorité (chakras, taux vibratoire, champ morphogénétique, mémoire de l'eau, résonance de Schumann, unités Bovis, synastrie quantique...)
-- Références absurdes à la vie quotidienne (le bitcoin, la grimpe, les beaux-parents, les collègues chiants, la raclette, les reviews de papiers scientifiques, l'EPFL...)
+- Pseudosciences dites avec autorité (chakras, taux vibratoire, champ morphogénétique, mémoire de l'eau, homéopathie, résonance de Schumann, unités Bovis, synastrie quantique...)
+- Références absurdes à la vie quotidienne (le bitcoin, la grimpe, la montagne, les beaux-parents, les collègues chiants, la raclette, les reviews de papiers scientifiques, l'EPFL...)
 - Formules grandiloquentes qui s'effondrent dans le ridicule
 - Un sérieux total face à l'absurdité totale : c'est ce qui rend le texte drôle
 En français, sans markdown ni astérisques.`;
@@ -120,15 +120,16 @@ async function generateHoroscope(signe) {
   var display = document.getElementById("quoteHoroscope");
   display.innerHTML = loader();
 
-  var systemHoroscope = PERSONNALITE + "\n\nTu rédiges des horoscopes parodiques en 2-3 paragraphes.\n"
+  var systemHoroscope = PERSONNALITE + "\n\nTu rédiges des horoscopes parodiques très courts : 2 paragraphes maximum, 2-3 phrases chacun.\n"
     + "Commence par une observation cosmique pseudo-scientifique.\n"
-    + "Inclus une prédiction positive ET une mise en garde absurde.\n"
-    + "Termine par un conseil pratique complètement délirant.";
+    + "Termine par un conseil pratique complètement délirant.\n"
+    + "Sois percutant et concis, pas exhaustif.";
 
   try {
     var texte = await appelClaude(
       systemHoroscope,
-      [{ role: "user", content: "Génère l'horoscope du " + signe + " pour le mois de " + MOIS[new Date().getMonth()] + "." }]
+      [{ role: "user", content: "Génère l'horoscope du " + signe + " pour le mois de " + MOIS[new Date().getMonth()] + "." }],
+      250
     );
     display.innerHTML = formaterTexte(texte, "martin-para", "#5EFF00");
   } catch(err) {
@@ -167,17 +168,16 @@ async function analyserCompatibilite() {
   display.innerHTML = loader("Dr. Millon calcule l'intrication vibratoire…");
 
   var systemCompat = PERSONNALITE + "\n\nTu analyses de manière parodique la compatibilité amoureuse entre deux signes astrologiques.\n"
-    + "Structure ta réponse en 3 parties courtes et concises bien distinctes (séparées par une ligne vide) :\n"
-    + "1. L'analyse cosmique de la combinaison (pseudo-scientifique et absurde)\n"
-    + "2. Les points de friction vibratoire (les problèmes, formulés dramatiquement)\n"
-    + "3. Le verdict final avec un score de compatibilité sur 10 et un conseil de survie\n"
-    + "Sois généreux en métaphores astrophysiques techniques et en références incongrues.";
+    + "Structure ta réponse en 2 parties très courtes (séparées par une ligne vide) :\n"
+    + "1. L'analyse cosmique de la combinaison (1-2 phrases pseudo-scientifiques et absurdes)\n"
+    + "2. Le verdict final avec un score de compatibilité sur 10 et un conseil de survie (1-2 phrases)\n"
+    + "Sois concis et percutant.";
 
   try {
     var texte = await appelClaude(
       systemCompat,
       [{ role: "user", content: "Analyse la compatibilité amoureuse entre un " + s1 + " et un " + s2 + "." }],
-      600
+      300
     );
     display.innerHTML = formaterTexte(texte, "martin-para", "#FFB6C1");
   } catch(err) {
@@ -238,10 +238,11 @@ async function envoyerQuestion() {
     + "Tu réponds aux questions personnelles de ton client en restant totalement en personnage.\n"
     + "Tu relies toujours la situation personnelle du client à des phénomènes cosmologiques réels ou pseudo-scientifiques.\n"
     + "Tu peux te souvenir du contexte de la conversation pour des réponses cohérentes.\n"
-    + "Réponds en 1-2 phrases maximum, comme une conversation normale. Entretiens la conversation et pose des questions absurdes si la situation le requiert. Conclus par un conseil pratique absurde si cela est pertinent.";
+    + "IMPÉRATIF : réponds en 1-2 phrases maximum, pas plus. Comme une conversation orale, courte et directe.\n"
+    + "Tu peux poser une question absurde de suivi si la situation le requiert.";
 
   try {
-    var texte = await appelClaude(systemConsult, historiqueConsultation, 450);
+    var texte = await appelClaude(systemConsult, historiqueConsultation, 150);
     loaderDiv.remove();
     ajouterBulleChat("assistant", texte);
     historiqueConsultation.push({ role: "assistant", content: texte });
