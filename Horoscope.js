@@ -168,9 +168,10 @@ async function analyserCompatibilite() {
   display.innerHTML = loader("Dr. Millon calcule l'intrication vibratoire…");
 
   var systemCompat = PERSONNALITE + "\n\nTu analyses de manière parodique la compatibilité amoureuse entre deux signes astrologiques.\n"
-    + "Structure ta réponse en 2 parties très courtes (séparées par une ligne vide) :\n"
+    + "Structure ta réponse en 3 parties courtes (séparées par une ligne vide) :\n"
     + "1. L'analyse cosmique de la combinaison (1-2 phrases pseudo-scientifiques et absurdes)\n"
-    + "2. Le verdict final avec un score de compatibilité sur 10 et un conseil de survie (1-2 phrases)\n"
+    + "2. Les arguments de compatibilité et des points de friction (3-4 phrases)\n"
+    + "3. Le verdict final avec un score de compatibilité sur 10 et un conseil de survie (2-3 phrases)\n"
     + "Sois concis et percutant.";
 
   try {
